@@ -99,6 +99,23 @@ USER STORIES:
         3. I want to be able to see the poster/graphic of movie.
         4. I want to see more information about movies.
 
+
+API ROUTES:
+    Reviews:
+        A logged in user may comment or delete one of their reviews dynamically without a page refresh.
+            POST /api/reviews/:id
+            DELETE /api/reviews/:id
+
+    Likes: A logged in user may "like" a movie dynamically without a page refresh.
+            POST /api/likes/:id
+            DELETE /api/likes/:id
+
+    Dislike: A logged in user may "dislike" a movie dynamically without a page refresh.
+            POST /api/dislikes/:id
+            DELETE /api/dislikes/:id
+
+
+
 FRONTEND ROUTES:
     User-facing routes:
         1. /login
