@@ -1,13 +1,16 @@
 extends layout.pug
 
+include utils.pug
+
 block content
+    +validationErrorSummary(errors)
     form(method='post' action='/user/login')
         input(type='hidden' name='_csrf' value=token)
         div
         label(for='email') Email
-        input(type='text' name='email' value=email required)
+        input(type='text' name='email' value=email)
         div
         label(for='password') Password
-        input(type='text' name='password' value=password required)
-        div 
-        button LogIn 
+        input(type='text' name='password' value=password)
+        div
+        button LogIn
