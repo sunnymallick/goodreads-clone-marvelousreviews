@@ -8,17 +8,17 @@ const { check, validationResult } = require('express-validator');
 const signInValidators = [
   check('username')
     .exists({ checkFalsy: true })
-    .withMessage('A user name')
+    .withMessage('Please provide a User Name')
     .isLength({ max: 50 })
     .withMessage('User name must not be more than 50 characters long'),
   check('email')
     .exists({ checkFalsy: true })
-    .withMessage('An email')
+    .withMessage('Please provide an Email')
     .isEmail()
-    .withMessage('Not a valid email Address'),
+    .withMessage('Not a valid Email Address'),
   check('password')
     .exists({ checkFalsy: true })
-    .withMessage('A password'),
+    .withMessage('Please provide a valid Password'),
 ];
 
 router.get('/signup', csrfProtection, (req, res) => {
@@ -50,23 +50,42 @@ router.get('/login', csrfProtection, (req, res) => {
   res.render('user-login', { token: req.csrfToken() })
 })
 
-router.post('/login', csrfProtection, asyncHandler(async (req, res) => {
-  const user = await User.findOne({
-    where: { email: req.body.email }
-  })
-  console.log(user.password)
-  const isPassword = await bcrypt.compare(req.body.password, user.password.toString())
-  console.log('----')
+const loginValidators = [
+  check('email')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide an Email'),
+  check('password')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a Password')
+];
 
-  //console.log(isPassword)
-  if (isPassword) {
-    console.log('Success!')
-    req.session.user = { username: user.username, userId: user.id }
-    return res.redirect('/user/profile')
+router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, res) => {
+  const { email, password } = req.body;
+
+  let errors = [];
+  const validatorErrors = validationResult(req);
+
+  if (validatorErrors.isEmpty()) {
+    const user = await User.findOne({ where: { email: req.body.email } })
+
+    if (user !== null) {
+      const isPassword = await bcrypt.compare(req.body.password, user.password.toString());
+
+      if (isPassword) {
+        res.redirect('/user/profile')
+      }
+    }
+    errors.push('log-in failed for the provided email and password')
   } else {
-    console.log('Failure!')
+    errors = validatorErrors.array().map((error) => error.msg);
   }
-}))
+
+  res.render('user-login', {
+    email,
+    errors,
+    token: req.csrfToken(),
+  });
+}));
 
 router.get('/logout', (req, res) => {
   delete req.session.user
