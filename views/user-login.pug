@@ -18,3 +18,7 @@ block content
         button Login
         br
         a(class='signup-link' href="/user/signup") Not a member? Sign up here!
+
+    form(method='post' action='/user/login/demo')
+        input(type='hidden' name='_csrf', value=token)
+        button Demo User
