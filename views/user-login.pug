@@ -1,4 +1,6 @@
 extends layout.pug
+block head
+    title='Login'
 
 include utils.pug
 
@@ -6,11 +8,17 @@ block content
     +validationErrorSummary(errors)
     form(method='post' action='/user/login')
         input(type='hidden' name='_csrf' value=token)
-        div
+        br
         label(for='email') Email
-        input(type='text' name='email' value=email)
+        input(type='text' name='email' value=username)
         div
         label(for='password') Password
-        input(type='text' name='password' value=password)
+        input(type='Password' name='password' value=password)
         div
-        button LogIn
+        button Login
+        br
+        a(class='signup-link' href="/user/signup") Not a member? Sign up here!
+
+    form(method='post' action='/user/login/demo')
+        input(type='hidden' name='_csrf', value=token)
+        button Demo User

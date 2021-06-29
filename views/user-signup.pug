@@ -1,4 +1,6 @@
 extends layout.pug
+block head
+    title='Sign Up'
 
 include utils.pug
 
@@ -16,3 +18,5 @@ block content
         input(type='text' name='password' value=password)
         div
         button Sign Up
+        br
+        a(href='/user/login') Already a member? Login here!

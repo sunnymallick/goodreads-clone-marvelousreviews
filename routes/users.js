@@ -21,6 +21,11 @@ const signInValidators = [
     .withMessage('Please provide a valid Password'),
 ];
 
+// async function loginUser(req, res, user) {
+//   req.session.auth = {email: user.email, userId: user.id}
+// }
+
+
 router.get('/signup', csrfProtection, (req, res) => {
   res.render('user-signup', { token: req.csrfToken() })
 })
@@ -66,12 +71,13 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, 
   const validatorErrors = validationResult(req);
 
   if (validatorErrors.isEmpty()) {
-    const user = await User.findOne({ where: { email: req.body.email } })
+    const user = await User.findOne({ where: { email } })
 
     if (user !== null) {
       const isPassword = await bcrypt.compare(password, user.password.toString());
 
       if (isPassword) {
+        loginUser(req, res, user)
         res.redirect('/user/profile')
       }
     }
@@ -92,6 +98,25 @@ router.get('/logout', (req, res) => {
   res.redirect('/')
 })
 
+//DEMO USER
+// router.get('/login/demo', csrfProtection, asyncHandler(async(req, res) => {
+//   res.redirect('/user/profile')
+// }))
+
+router.post('/login/demo', csrfProtection, asyncHandler(async(req, res, next) => {
+  const email = 'demouser@demo.com'
+  const user = await User.findOne({ where: { email } })
+  console.log(user)
+  loginUser(req, res, user);
+  req.session.save((error) => {
+    if (error) {
+      next(error)
+    } else {
+      res.redirect('/user/profile')
+    }
+  })
+}))
+
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -99,7 +124,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/profile', (req, res) => {
-  res.send("Welcome to the user's profile!")
+  res.render('profile')
 })
 
 module.exports = router;
