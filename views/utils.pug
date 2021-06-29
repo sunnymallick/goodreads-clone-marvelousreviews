@@ -1,0 +1,7 @@
+mixin validationErrorSummary(errors)
+    if errors
+        div
+        p Please provide the following:
+        ul
+            each error in errors
+                li= error
