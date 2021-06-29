@@ -1,0 +1,16 @@
+extends layout.pug 
+block content
+    .errors-container
+    
+    h3= movies.name
+    h4: 'Movie'
+        li= `Title: ${movies.name}`
+        li= `Year: ${movies.releaseYear}`
+        li= `Director: ${movies.director}`
+        li= `Cast: ${movies.cast} `
+        li= `Poster: ${movies.movieImg}`
+        form(class="review-form")
+        .form-group
+            label(for='review') Review
+            input#message.form-control(type='review', name="review", placeholder='What did you think?')
+        button.btn.btn-primary(type='submit') Post!
