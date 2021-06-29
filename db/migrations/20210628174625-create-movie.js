@@ -12,15 +12,19 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      genre: {
+      releaseYear: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       director: {
         allowNull: false,
         type: Sequelize.STRING
       },
       cast: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      movieImg: {
         allowNull: false,
         type: Sequelize.STRING
       },
