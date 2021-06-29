@@ -11,3 +11,8 @@ async function checkPassword(password, hash){
         console.log('Failure!')
     }
 }
+
+async function genterateHash(password) {
+    console.log( await bcrypt.hash(password, 12))
+}
+
