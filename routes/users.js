@@ -69,7 +69,7 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, 
     const user = await User.findOne({ where: { email: req.body.email } })
 
     if (user !== null) {
-      const isPassword = await bcrypt.compare(req.body.password, user.password.toString());
+      const isPassword = await bcrypt.compare(password, user.password.toString());
 
       if (isPassword) {
         res.redirect('/user/profile')
