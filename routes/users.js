@@ -4,6 +4,11 @@ const { csrfProtection, asyncHandler } = require('./utils');
 const { User } = require('../db/models')
 const bcrypt = require('bcryptjs')
 
+async function loginUser(req, res, user) {
+  req.session.user = {username: user.username, userId: user.id}
+}
+
+
 router.get('/signup', csrfProtection, (req, res) => {
   res.render('user-signup', { token: req.csrfToken() })
 })
@@ -25,11 +30,9 @@ router.get('/login', csrfProtection, (req, res) => {
 
 router.post('/login', csrfProtection, asyncHandler(async(req, res) => {
   const user = await User.findOne({
-    where:{email: req.body.email} 
+    where:{email: req.body.email}
   })
-  console.log(user.password)
   const isPassword = await bcrypt.compare(req.body.password, user.password.toString())
-  console.log('----')
 
   //console.log(isPassword)
   if(isPassword){
@@ -45,6 +48,19 @@ router.get('/logout', (req, res) =>{
   delete req.session.user
   res.redirect('/')
 })
+
+//DEMO USER
+// router.get('/login/demo', csrfProtection, asyncHandler(async(req, res) => {
+//   res.redirect('/user/profile')
+// }))
+
+router.post('/login/demo', csrfProtection, asyncHandler(async(req, res) => {
+  const username = 'demouser'
+  const user = await User.findOne({ where: { username } })
+  req.session.user = {username: username}
+  loginUser(req, res, user);
+  res.redirect('/user/profile')
+}))
 
 
 /* GET users listing. */

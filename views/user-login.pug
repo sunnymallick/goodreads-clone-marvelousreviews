@@ -1,13 +1,16 @@
 extends layout.pug
-
+block head
+    title='Login'
 block content
     form(method='post' action='/user/login')
         input(type='hidden' name='_csrf' value=token)
-        div
+        br
         label(for='email') Email
-        input(type='text' name='email' value=email required)
+        input(type='text' name='email' value=username required)
         div
         label(for='password') Password
-        input(type='text' name='password' value=password required)
-        div 
-        button LogIn 
+        input(type='Password' name='password' value=password required)
+        div
+        button Login
+        br
+        a(class='signup-link' href="/user/signup") Not a member? Sign up here!
