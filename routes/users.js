@@ -4,6 +4,7 @@ const { csrfProtection, asyncHandler } = require('./utils');
 const { User } = require('../db/models');
 const bcrypt = require('bcryptjs');
 const { check, validationResult } = require('express-validator');
+const { loginUser, logoutUser, requireAuth, restoreUser } = require('../auth');
 
 const signInValidators = [
   check('username')
@@ -40,6 +41,7 @@ router.post('/signup', csrfProtection, signInValidators, asyncHandler(async (req
     const hashedPassword = await bcrypt.hash(password, 10);
     user.password = hashedPassword;
     await user.save();
+    loginUser(req, res, user);
     res.redirect('/user/profile')
   } else {
     const errors = validatorErrors.array().map((error) => error.msg);
@@ -95,6 +97,7 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, 
 
 router.get('/logout', (req, res) => {
   delete req.session.user
+  logoutUser(req, res)
   res.redirect('/')
 })
 
@@ -120,7 +123,8 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/profile', (req, res) => {
-  res.render('profile')
+  // res.render('profile')
+  res.send('hello from the profile page')
 })
 
 module.exports = router;
