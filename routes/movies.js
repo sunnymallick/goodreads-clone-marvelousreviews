@@ -11,3 +11,13 @@ router.get('/all', asyncHandler (async(req, res) =>{
 }))
 
 module.exports = router;
+
+
+
+
+///unseed
+///unmigrate
+//add taglines in models x migrations
+//add in seeding info
+//remigrate
+//reseed
