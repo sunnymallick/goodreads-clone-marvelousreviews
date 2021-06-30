@@ -1,21 +1,19 @@
 extends layout.pug
-
-//- block nav
-//-       include navBar.pug
+include utils.pug
+block head
+    title= 'Movies'
+    link(rel='stylesheet' href='/stylesheets/movies.css')
 
 block content
-    .errors-container
-
-    //-h3= movie.name
-    //-h4: 'Movie'
     each movie in movies
-        li= img(src=`movie.movieImg` alt='movieImg') //-ask Chris about iterating the movies array to pull movie posters up indivisually.
+        img(src=`${movie.movieImg}` alt='movieImg' class='movieImg')
         li= `Title: ${movie.name}`
         li= `Year: ${movie.releaseYear}`
         li= `Director: ${movie.director}`
         li= `Cast: ${movie.cast} `
         form(class="review-form")
         .form-group
-            label(for='review') Review
+            label(for='review') Review:
             input#message.form-control(type='review', name="review", placeholder='What did you think?')
         button.btn.btn-primary(type='submit') Post!
+        br

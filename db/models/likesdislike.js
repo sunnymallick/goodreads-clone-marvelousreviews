@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   LikesDislike.associate = function(models) {
     // associations can be defined here
+    LikesDislike.hasMany(models.Review, { foreignKey: 'likeDislikes_id' })
   };
   return LikesDislike;
 };

@@ -1,0 +1,24 @@
+extends layout.pug
+include utils.pug
+    //- .errors-container
+
+block head
+    title #{movie.name}
+    link(rel='stylesheet' href='/stylesheets/movie.css')
+
+
+block content
+    div(class='movie-block')
+        h2 #{movie.name}
+        img(src=`${movie.movieImg}` alt='movieImg' class='singleMovieImg')
+        each review in reviews
+            p #{review.User.username}: #{review.review}
+            p #{review.likeDislikes_id}
+        br
+        label(for='comment-block') Post a review!
+        br
+        textarea(id='comment-text')
+        br
+        button Post
+
+    //-insert other comments here

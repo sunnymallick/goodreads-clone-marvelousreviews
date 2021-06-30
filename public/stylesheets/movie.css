@@ -1,0 +1,12 @@
+body {
+    background-color: white;
+}
+
+h2 {
+    text-align: center;
+}
+
+.singleMovieImg {
+    max-height: 300px;
+    max-width: 150px;
+}
