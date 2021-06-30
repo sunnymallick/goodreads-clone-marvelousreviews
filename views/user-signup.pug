@@ -1,8 +1,11 @@
 extends layout.pug
+include utils.pug
+
 block head
     title='Sign Up'
 
-include utils.pug
+//- block nav
+//-     include navBar.pug
 
 block content
     +validationErrorSummary(errors)
