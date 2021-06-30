@@ -1,8 +1,23 @@
-extend layout.pug
+extends layout.pug
 include utils.pug
+    //- .errors-container
 
-//- block head
-//-     title=`${movie.name}`
+append head
+    title=`${movie.name}`
+    link(rel='stylesheet' href='/stylesheets/movie.css')
+
 
 block content
-    p Hello world
+    div(class='movie-block')
+        h2 #{movie.name}
+        img(src=`${movie.movieImg}` alt='movieImg' class='singleMovieImg')
+        each review in reviews
+            p #{} #{review.review}
+        br
+        label(for='comment-block') Post a review!
+        br
+        textarea(id='comment-text')
+        br
+        button Post
+
+    //-insert other comments here

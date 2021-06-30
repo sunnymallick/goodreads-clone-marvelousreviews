@@ -1,11 +1,12 @@
 extends layout.pug
-block content
-    .errors-container
+include utils.pug
+block head
+    title= 'Movies'
+    link(rel='stylesheet' href='/stylesheets/movies.css')
 
-    //-h3= movie.name
-    //-h4: 'Movie'
+block content
     each movie in movies
-        img(src=`${movie.movieImg}` alt="movieImg" class='movieImg')
+        img(src=`${movie.movieImg}` alt='movieImg' class='movieImg')
         //- li= img(src=`movie.movieImg` alt='movieImg') //-ask Chris about iterating the movies array to pull movie posters up indivisually.
         li= `Title: ${movie.name}`
         li= `Year: ${movie.releaseYear}`
@@ -13,7 +14,7 @@ block content
         li= `Cast: ${movie.cast} `
         form(class="review-form")
         .form-group
-            label(for='review') Review
+            label(for='review') Review:
             input#message.form-control(type='review', name="review", placeholder='What did you think?')
         button.btn.btn-primary(type='submit') Post!
         br

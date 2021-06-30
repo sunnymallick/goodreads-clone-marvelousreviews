@@ -2,8 +2,11 @@ body {
     background-color: white;
 }
 
-.movieImg {
-    padding-top: 10px;
+h2 {
+    text-align: center;
+}
+
+.singleMovieImg {
     max-height: 300px;
     max-width: 150px;
 }

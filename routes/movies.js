@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Movie, Review } = require('../db/models');
+const { Movie, Review, User } = require('../db/models');
 const { asyncHandler } = require('../routes/utils')
 
 
@@ -19,10 +19,13 @@ router.get('/all', asyncHandler (async(req, res) =>{
 router.get('/:id(\\d+)', asyncHandler (async (req, res) => {
     const movieId = req.params.id;
     const movie = await Movie.findByPk(movieId);
-    console.log(movie)
-
-    res.render('movie')
+    const reviews = await Review.findAll({
+        where: { 'movie_id': movie.id },
+        include: ['Movie', 'User']
+    })
+    res.render('movie', { movie, reviews })
 }));
+
 
 
 
