@@ -7,7 +7,6 @@ block head
 block content
     each movie in movies
         img(src=`${movie.movieImg}` alt='movieImg' class='movieImg')
-        //- li= img(src=`movie.movieImg` alt='movieImg') //-ask Chris about iterating the movies array to pull movie posters up indivisually.
         li= `Title: ${movie.name}`
         li= `Year: ${movie.releaseYear}`
         li= `Director: ${movie.director}`

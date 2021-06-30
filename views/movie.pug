@@ -2,7 +2,7 @@ extends layout.pug
 include utils.pug
     //- .errors-container
 
-append head
+block head
     title=`${movie.name}`
     link(rel='stylesheet' href='/stylesheets/movie.css')
 
@@ -12,7 +12,7 @@ block content
         h2 #{movie.name}
         img(src=`${movie.movieImg}` alt='movieImg' class='singleMovieImg')
         each review in reviews
-            p #{} #{review.review}
+            p #{review.review}
         br
         label(for='comment-block') Post a review!
         br
