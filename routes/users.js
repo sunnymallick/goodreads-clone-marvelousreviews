@@ -99,10 +99,6 @@ router.get('/logout', (req, res) => {
 })
 
 //DEMO USER
-// router.get('/login/demo', csrfProtection, asyncHandler(async(req, res) => {
-//   res.redirect('/user/profile')
-// }))
-
 router.post('/login/demo', csrfProtection, asyncHandler(async(req, res, next) => {
   const email = 'demouser@demo.com'
   const user = await User.findOne({ where: { email } })
