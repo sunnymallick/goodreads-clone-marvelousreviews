@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     releaseYear: DataTypes.INTEGER,
     director: DataTypes.STRING,
     cast: DataTypes.STRING,
-    movieImg: DataTypes.STRING
+    movieImg: DataTypes.STRING,
+    tagline: DataTypes.STRING
   }, {});
   Movie.associate = function(models) {
     // associations can be defined here

@@ -9,12 +9,12 @@ const { sessionSecret } = require('./config');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const moviesRouter = require('./routes/movies')
 
 const app = express();
 
 // view engine setup
 app.set('view engine', 'pug');
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -39,6 +39,7 @@ store.sync();
 
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
+app.use('/movies', moviesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
