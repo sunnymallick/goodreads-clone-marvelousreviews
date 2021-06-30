@@ -2,13 +2,14 @@ extends layout.pug
 block content
     .errors-container
     
-    h3= movies.name
-    h4: 'Movie'
-        li= `Title: ${movies.name}`
-        li= `Year: ${movies.releaseYear}`
-        li= `Director: ${movies.director}`
-        li= `Cast: ${movies.cast} `
-        li= `Poster: ${movies.movieImg}`
+    //-h3= movie.name
+    //-h4: 'Movie'
+    each movie in movies
+        li= img(src=`movie.movieImg` alt='movieImg') //-ask Chris about iterating the movies array to pull movie posters up indivisually. 
+        li= `Title: ${movie.name}`
+        li= `Year: ${movie.releaseYear}`
+        li= `Director: ${movie.director}`
+        li= `Cast: ${movie.cast} `
         form(class="review-form")
         .form-group
             label(for='review') Review
