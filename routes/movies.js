@@ -21,7 +21,7 @@ router.get('/:id(\\d+)', asyncHandler (async (req, res) => {
     const movie = await Movie.findByPk(movieId);
     const reviews = await Review.findAll({
         where: { 'movie_id': movie.id },
-        include: ['Movie', 'User']
+        include: ['Movie', 'User', 'LikesDislike']
     })
     res.render('movie', { movie, reviews })
 }));
