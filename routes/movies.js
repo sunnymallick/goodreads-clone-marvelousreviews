@@ -11,18 +11,22 @@ router.get('/all', asyncHandler (async(req, res) =>{
     res.render('movies', {movies})
 }))
 
-module.exports = router;
+
 
 //create individual movie page /:id
 //req.params.id
 
-router.get('/:id(\\d+)'), asyncHandler (async (req, res) => {
+router.get('/:id(\\d+)', asyncHandler (async (req, res) => {
     const movieId = req.params.id;
-    const movie = await Movie.findbyPk(movieId);
+    const movie = await Movie.findByPk(movieId);
+    console.log(movie)
 
-    res.render('movie', { movie })
-})
+    res.render('movie')
+}));
 
+
+
+module.exports = router;
 ///unseed
 ///unmigrate
 //add taglines in models x migrations
