@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { Movie } = require('../db/models');
+const { Movie, Review } = require('../db/models');
 const { asyncHandler } = require('../routes/utils')
+
 
 const db = require('../db/models');
 
@@ -12,8 +13,15 @@ router.get('/all', asyncHandler (async(req, res) =>{
 
 module.exports = router;
 
+//create individual movie page /:id
+//req.params.id
 
+router.get('/:id(\\d+)'), asyncHandler (async (req, res) => {
+    const movieId = req.params.id;
+    const movie = await Movie.findbyPk(movieId);
 
+    res.render('movie', { movie })
+})
 
 ///unseed
 ///unmigrate
