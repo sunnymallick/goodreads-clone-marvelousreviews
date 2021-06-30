@@ -12,7 +12,7 @@ block content
         h2 #{movie.name}
         img(src=`${movie.movieImg}` alt='movieImg' class='singleMovieImg')
         each review in reviews
-            p #{review.review}
+            p #{review.User.username}: #{review.review}
         br
         label(for='comment-block') Post a review!
         br
