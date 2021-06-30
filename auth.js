@@ -3,7 +3,8 @@ const { User } = require('./db/models');
 
 const loginUser = (req, res, user) => {
     req.session.auth = {
-        email: user.email, userId: user.id
+        email: user.email,
+        userId: user.id
     }
 }
 
@@ -24,10 +25,10 @@ const restoreUser = async (req, res, next) => {
     if (req.session.auth) {
         // check how to use User here
         // ??
-        const { id } = req.session.auth;
+        const { userId } = req.session.auth;
 
         try {
-            const user = await User.findByPk(id);
+            const user = await User.findByPk(userId);
 
             if (user) {
                 res.locals.authenticated = true;

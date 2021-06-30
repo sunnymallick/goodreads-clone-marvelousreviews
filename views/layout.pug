@@ -2,7 +2,22 @@ doctype html
 html
   head
       block head
-        title="Marvelous 💥 "
-        link(rel='stylesheet' href='/stylesheets/reset.css')
+        title="Marvelous 💥"
+        link(rel="stylesheet" href="/stylesheets/reset.css")
   body
+    nav(class="navbar")
+      a(class="homeLink" href="/") Home
+      div
+      //-insert all movies link
+      a(class="moviesLink" href="??????") Movies
+      div
+        if locals.authenticated
+          a(class="myProfileLink" href="/user/profile") Welcome #{user.username}!
+          form(action="/user/logout" method="post")
+            button(type='submit') Logout
+        else
+          span
+            a(class="button" href="/user/login") Login
+            div
+            a(class="button" href="/user/signup") SignUp
     block content

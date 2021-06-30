@@ -22,10 +22,6 @@ const signInValidators = [
     .withMessage('Please provide a valid Password'),
 ];
 
-// async function loginUser(req, res, user) {
-//   req.session.auth = {email: user.email, userId: user.id}
-// }
-
 
 router.get('/signup', csrfProtection, (req, res) => {
   res.render('user-signup', { token: req.csrfToken() })
@@ -42,7 +38,13 @@ router.post('/signup', csrfProtection, signInValidators, asyncHandler(async (req
     user.password = hashedPassword;
     await user.save();
     loginUser(req, res, user);
+    // req.session.save((error) => {
+    // if (error) {
+    //   next(error)
+    // } else {
     res.redirect('/user/profile')
+    // }
+    // })
   } else {
     const errors = validatorErrors.array().map((error) => error.msg);
     res.render('user-signup', {
@@ -80,7 +82,14 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, 
 
       if (isPassword) {
         loginUser(req, res, user)
-        res.redirect('/user/profile')
+        //
+        // req.session.save((error) => {
+        // if (error) {
+        //   next(error)
+        // } else {
+        return res.redirect('/user/profile');
+        // }
+        // })
       }
     }
     errors.push('log-in failed for the provided email and password')
@@ -95,14 +104,22 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, 
   });
 }));
 
-router.get('/logout', (req, res) => {
-  delete req.session.user
+router.post('/logout', (req, res) => {
+  // delete req.session.user
   logoutUser(req, res)
-  res.redirect('/')
+  //
+  req.session.save((error) => {
+    if (error) {
+      next(error)
+    } else {
+      res.redirect('/')
+    }
+  })
+
 })
 
 //DEMO USER
-router.post('/login/demo', csrfProtection, asyncHandler(async(req, res, next) => {
+router.post('/login/demo', csrfProtection, asyncHandler(async (req, res, next) => {
   const email = 'demouser@demo.com'
   const user = await User.findOne({ where: { email } })
   console.log(user)
@@ -123,8 +140,8 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/profile', (req, res) => {
-  // res.render('profile')
-  res.send('hello from the profile page')
+  res.render('profile')
+  // res.send('hello from the profile page')
 })
 
 module.exports = router;

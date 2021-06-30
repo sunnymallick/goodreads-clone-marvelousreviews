@@ -2,7 +2,7 @@ extends layout.pug
 block head
     title='Profile'
 block content
-    h2 welcome user.username
+    h2 welcome #{locals.user.username}
     div Profile Information
         br
         img(src="", alt="avatar")
