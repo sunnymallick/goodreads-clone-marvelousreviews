@@ -1,11 +1,15 @@
-extends layout.pug 
+extends layout.pug
+
+//- block nav
+//-       include navBar.pug
+
 block content
     .errors-container
-    
+
     //-h3= movie.name
     //-h4: 'Movie'
     each movie in movies
-        li= img(src=`movie.movieImg` alt='movieImg') //-ask Chris about iterating the movies array to pull movie posters up indivisually. 
+        li= img(src=`movie.movieImg` alt='movieImg') //-ask Chris about iterating the movies array to pull movie posters up indivisually.
         li= `Title: ${movie.name}`
         li= `Year: ${movie.releaseYear}`
         li= `Director: ${movie.director}`
