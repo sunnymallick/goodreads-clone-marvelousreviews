@@ -25,17 +25,17 @@ router.get('/all', asyncHandler (async(req, res) =>{
 //create individual movie page /:id
 //req.params.id
 
-router.get('/:id(\\d+)', asyncHandler (async (req, res) => {
+router.get('/:id(\\d+)', csrfProtection, asyncHandler (async (req, res) => {
     const movieId = req.params.id;
     const movie = await Movie.findByPk(movieId);
     const reviews = await Review.findAll({
         where: { 'movie_id': movie.id },
         include: ['Movie', 'User', 'LikesDislike']
     })
-    res.render('movie', { movie, reviews })
+    res.render('movie', { movie, reviews, token: req.csrfToken() })
 }));
 
-router.post('/:id(\\d+)', reviewValidator, asyncHandler(async (req, res, next) => {
+router.post('/:id(\\d+)', reviewValidator, csrfProtection, asyncHandler(async (req, res, next) => {
     const { review, likeDislike } = req.body
     const isLiked = likeDislike === 'true'
     const movieId = req.params.id;
@@ -55,6 +55,9 @@ router.post('/:id(\\d+)', reviewValidator, asyncHandler(async (req, res, next) =
     res.redirect(`/movies/${movie.id}`)
 }))
 
+router.delete('/:id(\\d+)', asyncHandler(async(req, res, next) => {
+
+}))
 
 module.exports = router;
 ///unseed

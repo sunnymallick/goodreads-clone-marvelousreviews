@@ -19,10 +19,17 @@ block content
         p User Reviews
         each review in reviews
             p #{review.User.username}: #{review.review}
-            p Rating: #{review.LikesDislike.rating}
+                br
+                if review.LikesDislike.rating == true
+                    label Rating:
+                    img(src='../images/thumbs-up.png', alt="thumbsUp")
+                else
+                    label Rating:
+                    img(src='../images/thumbs-down.png', alt='thumbsDown')
+            //- p Rating: #{review.LikesDislike.rating}
             if locals.authenticated
                 if locals.user.id === review.user_id
-                button Delete Review
+                    button Delete Review
             //- p #{review.likeDislikes_id}
         //- if locals.authenticated
         //-     if locals.user.id === review.user_id
@@ -30,6 +37,7 @@ block content
         br
         if locals.authenticated
             form(method='post' action=`/movies/${movie.id}`)
+                input(type='hidden' name='_csrf' value=token)
                 br
                 label Post a review and leave a rating!
                 br
