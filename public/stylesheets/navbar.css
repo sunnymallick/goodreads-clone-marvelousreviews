@@ -2,15 +2,22 @@
 
 * {
     box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(51, 46, 46);
+    color: white;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: rgb(51, 46, 46);
+    font-family: 'Marvel', sans-serif;
+    text-decoration: none;
 }
 
 li, a , button {
     font-family: 'Marvel', sans-serif;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     color: white;
     text-decoration: none;
 }
@@ -19,7 +26,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10px;
+    padding: 25px 25px;
 }
 
 img {
@@ -36,28 +43,29 @@ img {
 }
 
 .navLinks li {
-    display: inline;
+    display: inline-block;
     padding: 0px 20px;
+    margin-right: 100px;
 }
 
 .navLinks li a {
-    transition: all 0.5s ease 0s;
+    transition: all 1s ease 0s;
 }
 
 .navLinks li a:hover {
-    color: rgb(255, 99, 71);
+    color: red;
 }
 
 .button {
-    padding: 9px 25px;
-    background-color: rgba(255, 99, 71, 1);
+    padding: 3px 15px;
+    background-color: rgb(255, 0, 0);
     border: none;
     border-radius: 50px;
-    cursor:pointer;
-    transition: all 0.5s ease 0s;
+    cursor: pointer;
+    transition: all 1s ease 0s;
 
 }
 
 .button:hover {
-    background-color: rgba(255, 99, 71, 0.15);
+    background-color: rgba(255, 0, 0, 0.15);
 }

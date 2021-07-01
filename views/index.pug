@@ -1,12 +1,11 @@
 extends layout
 
-append head
-  //- add page specific styles by appending to the head
-  link(rel="stylesheet" href="/stylesheets/index.css")
-  //- add page specific js
-  script(src="/javascripts/index.js" type="module" defer)
+block head
+    title='Marvelous 💥'
+
+    block nav
+        include navBar.pug
 
 block content
   h1= title
   p A spot for all Marvel fans.
-

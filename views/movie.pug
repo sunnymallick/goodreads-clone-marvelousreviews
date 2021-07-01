@@ -6,6 +6,8 @@ block head
     title #{movie.name}
     link(rel='stylesheet' href='/stylesheets/movie.css')
 
+    block nav
+        include navBar.pug
 
 block content
     div(class='movie-block')
