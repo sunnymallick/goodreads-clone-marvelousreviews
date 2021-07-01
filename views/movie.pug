@@ -20,6 +20,9 @@ block content
         each review in reviews
             p #{review.User.username}: #{review.review}
             p Rating: #{review.LikesDislike.rating}
+            if locals.authenticated
+                if locals.user.id === review.user_id
+                button Delete Review
             //- p #{review.likeDislikes_id}
         //- if locals.authenticated
         //-     if locals.user.id === review.user_id
