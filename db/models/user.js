@@ -8,7 +8,6 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = function(models) {
     // associations can be defined here
     User.hasMany(models.Review, { foreignKey: 'user_id' })
-    User.belongsTo(models.MovieShelf, {foreignKey: 'user_id'})
   };
   return User;
 };
