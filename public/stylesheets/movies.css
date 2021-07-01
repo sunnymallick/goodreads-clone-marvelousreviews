@@ -1,9 +1,44 @@
 body {
-    background-color: white;
+    background-color: rgb(51, 46, 46);
+    height: 100vh;
+    color: white;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(https://cdnb.artstation.com/p/assets/images/images/008/553/927/medium/alan-bouret-ironman-arnold-artstation.jpg?1513526155);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
 }
 
 .movieImg {
-    padding-top: 10px;
-    max-height: 300px;
-    max-width: 150px;
+    width: 150px;
+    height: 200px;
+    padding: 10px 10px;
+    margin: 10px 15px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.movieImg:hover {
+    transform: translateY(-5px);
+    -o-transition: 1s;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -webkit-transition: 1s;
+    transition: 1s;
+    box-shadow: 5px 5px 5px rgb(39, 1, 39);
+}
+
+.movie_container {
+    width: 80%;
+    margin: 0;
+    display: inline-grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    margin-left: 15%;
+}
+
+h1 {
+    text-shadow: 0 0 30px red;
+    text-align: center;
 }

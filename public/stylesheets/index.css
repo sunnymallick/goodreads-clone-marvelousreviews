@@ -1,3 +1,81 @@
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(https://media.wkyc.com/assets/WKYC/images/21ad1c57-4995-4f73-bd38-00c84ffa83a9/21ad1c57-4995-4f73-bd38-00c84ffa83a9_750x422.jpg);
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+.row_title {
+    display: flex;
+    height: 70%;
+    align-items: center;
+    margin-left: 10%;
+}
+
+.column {
+    flex-basis: 50%;
+}
+
 h1 {
-    color: #555555;
+    font-size: 80px;
+}
+
+p{
+    font-size: 20px;
+}
+
+.feat_movie {
+    width: 200px;
+    height: 200px;
+    display: inline-table;
+    border-radius: 10px;
+    padding: 15px 25px;
+    margin: 10px 12px;
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+}
+
+.movie1 {
+    background-image: url(https://concertposter.org/wp-content/uploads/2020/05/black-widow_stand-disp.jpg);
+}
+
+.movie2 {
+    background-image: url(https://cultmtl.com/wp-content/uploads/2021/04/BC97ADC5-C2C7-4BC7-A096-6CD9FA508AEB-1296x1920.jpeg)
+}
+
+.movie3 {
+    background-position: bottom;
+    background-image: url(https://terrigen-cdn-dev.marvel.com/content/prod/1x/online_10.jpg);
+}
+
+.movie4 {
+    background-position: top;
+    background-image: url(https://terrigen-cdn-dev.marvel.com/content/prod/1x/sn_lob_crd_01.jpg);
+}
+
+.feat_movie:hover {
+    transform: translateY(-10px);
+}
+
+h4 {
+    font-size: 18px;
+    text-shadow: 0 0 15px red;
+}
+
+.feat_movie p {
+    text-shadow: 0 0 15px blue;
+    font-size: 15px;
+}
+
+.column h5 {
+    margin-left: 225px;
+    text-shadow: 0 0 30px red;
+    font-size: 20px;
+}
+.column h1 {
+    text-shadow: 0 0 30px red;
 }
