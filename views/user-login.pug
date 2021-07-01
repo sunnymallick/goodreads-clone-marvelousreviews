@@ -3,25 +3,32 @@ include utils.pug
 
 block head
     title='Login'
+    link(rel="stylesheet" href="/stylesheets/forms.css")
 
-//- block nav
-//-       include navBar.pug
+    block nav
+        include navBar.pug
 
 block content
-    +validationErrorSummary(errors)
-    form(method='post' action='/user/login')
-        input(type='hidden' name='_csrf' value=token)
-        br
-        label(for='email') Email
-        input(type='text' name='email' value=username)
-        div
-        label(for='password') Password
-        input(type='password' name='password' value=password)
-        div
-        button Login
-        br
-        a(class='signup-link' href="/user/signup") Not a member? Sign up here!
+    div(class="center")
+        h1 Login
+        +validationErrorSummary(errors)
+        form(method='post' action='/user/login')
+            div(class="txt_field")
+                input(type='hidden' name='_csrf' value=token)
+                input(type='text' name='email' value=username)
+                span
+                label(for='email') Email
+            div(class="txt_field")
+                input(type='password' name='password' value=password)
+                span
+                label(for='password') Password
+            div
+            input(class="submit_button" type="submit" value="Login")
+            div(class="signup_link")
+                p Not a member?
+                    a(href="/user/signup") SignUp!
 
-    form(method='post' action='/user/login/demo')
-        input(type='hidden' name='_csrf', value=token)
-        button Demo User
+        div(class="demo")
+            form(method='post' action='/user/login/demo')
+                input(type='hidden' name='_csrf' value=token)
+                button(class="demo_button") Demo User
