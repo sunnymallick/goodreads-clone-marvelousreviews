@@ -1,4 +1,14 @@
 body {
     background-color: rgb(51, 46, 46);
     color: white;
+        height: 100vh;
+        color: white;
+        width: 100%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url(https://i.pinimg.com/originals/91/89/ae/9189aeca9836550216d986dd0cbab062.jpg);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
 }
