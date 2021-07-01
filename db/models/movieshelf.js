@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   MovieShelf.associate = function(models) {
     MovieShelf.belongsTo(models.User, {foreignKey: 'user_id'})
+    MovieShelf.hasMany(models.Movie, {foreignKey: 'movie_id'})
   };
   return MovieShelf;
 };
