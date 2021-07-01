@@ -10,14 +10,15 @@ block head
 
 block content
     each movie in movies
-        img(src=`${movie.movieImg}` alt='movieImg' class='movieImg')
-        li= `Title: ${movie.name}`
-        li= `Year: ${movie.releaseYear}`
-        li= `Director: ${movie.director}`
-        li= `Cast: ${movie.cast} `
-        form(class="review-form")
-        .form-group
-            label(for='review') Review:
-            input#message.form-control(type='review', name="review", placeholder='What did you think?')
-        button.btn.btn-primary(type='submit') Post!
-        br
+        a(href=`/movies/${movie.id}`)
+            img(src=`${movie.movieImg}` alt='movieImg' class='movieImg')
+            li= `Title: ${movie.name}`
+            li= `Year: ${movie.releaseYear}`
+            li= `Director: ${movie.director}`
+            li= `Cast: ${movie.cast} `
+            form(class="review-form")
+            .form-group
+                label(for='review') Review:
+                input#message.form-control(type='review', name="review", placeholder='What did you think?')
+            button.btn.btn-primary(type='submit') Post!
+            br
