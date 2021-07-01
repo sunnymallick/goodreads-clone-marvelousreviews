@@ -1,5 +1,7 @@
 body {
     background-color: rgb(51, 46, 46);
+
+    height: 100vh;
     color: white;
         height: 100vh;
         color: white;
@@ -12,3 +14,5 @@ body {
         margin: 0;
         padding: 0;
 }
+
+
