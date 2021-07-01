@@ -10,17 +10,31 @@ block head
         include navBar.pug
 
 block content
-    div(class='movie-block')
+    div(class='movieBlock')
         h2 #{movie.name}
         img(src=`${movie.movieImg}` alt='movieImg' class='singleMovieImg')
+        br
+        label #{movie.description}
         each review in reviews
             p #{review.User.username}: #{review.review}
-            p #{review.likeDislikes_id}
+            //- p #{review.likeDislikes_id}
+        //- if locals.authenticated
+        //-     if locals.user.id === review.user_id
+        //-         form(method='delete' action=) WORKING ON DELETE
         br
-        label(for='comment-block') Post a review!
-        br
-        textarea(id='comment-text')
-        br
-        button Post
-
+        if locals.authenticated
+            form(method='post' action=`/movies/${movie.id}`)
+                br
+                label Post a review and leave a rating!
+                br
+                textarea(id='review' value=review name='review')
+                input(type='checkbox' value='true' name='likeDislike')
+                //- label(for='dropdown') Like
+                //- select(class='checkboxLike' value='like')
+                //- button(type='button' value='likeDislike') Like
+                //- radio button
+                button Post
+        else
+            br
+            label Please login to post a review!
     //-insert other comments here
