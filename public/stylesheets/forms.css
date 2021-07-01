@@ -122,3 +122,19 @@ form .txt_field {
     font-size: 16px;
     color: slategray;
 }
+
+.error_list {
+    text-align: center;
+    padding: 2px;
+    background: rgba(255, 0, 0, .25);
+    border-radius: 25px;
+    width: 80%;
+    margin: 0 0 0 40px;
+}
+
+.error_list li {
+    color: black;
+    list-style: none;
+    text-align: start;
+    margin-left: 35px;
+}
