@@ -22,14 +22,15 @@ block content
                 br
                 if review.LikesDislike.rating == true
                     label Rating:
-                    img(src='../images/thumbs-up.png', alt="thumbsUp")
+                    img(src='../images/thumbs-up.png', alt="thumbsUp" class='ratingImg')
                 else
                     label Rating:
-                    img(src='../images/thumbs-down.png', alt='thumbsDown')
+                    img(src='../images/thumbs-down.png', alt='thumbsDown' class='ratingImg')
             //- p Rating: #{review.LikesDislike.rating}
             if locals.authenticated
                 if locals.user.id === review.user_id
-                    button Delete Review
+                    form(method='post' action=`/movies/${review.id}/delete`)
+                        button Delete Review
             //- p #{review.likeDislikes_id}
         //- if locals.authenticated
         //-     if locals.user.id === review.user_id

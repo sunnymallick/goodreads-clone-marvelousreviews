@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { Movie, Review, User, LikesDislike } = require('../db/models');
 const { asyncHandler, csrfProtection } = require('../routes/utils')
-const { check } = require('express-validator')
+const { check, validationResult } = require('express-validator');
 
 
 const db = require('../db/models');
@@ -35,6 +35,7 @@ router.get('/:id(\\d+)', csrfProtection, asyncHandler (async (req, res) => {
     res.render('movie', { movie, reviews, token: req.csrfToken() })
 }));
 
+//adding review to movie page
 router.post('/:id(\\d+)', reviewValidator, csrfProtection, asyncHandler(async (req, res, next) => {
     const { review, likeDislike } = req.body
     const isLiked = likeDislike === 'true'
@@ -55,8 +56,13 @@ router.post('/:id(\\d+)', reviewValidator, csrfProtection, asyncHandler(async (r
     res.redirect(`/movies/${movie.id}`)
 }))
 
-router.delete('/:id(\\d+)', asyncHandler(async(req, res, next) => {
-
+//delete review from movie page
+router.post('/:id(\\d+)/delete', asyncHandler(async(req, res, next) => {
+    const reviewId = req.params.id;
+    const review = await Review.findByPk(reviewId);
+    const movieId = review.movie_id
+    await review.destroy()
+    res.redirect(`/movies/${movieId}`)
 }))
 
 module.exports = router;
