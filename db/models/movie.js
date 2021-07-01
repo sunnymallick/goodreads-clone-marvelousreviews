@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     quote: DataTypes.STRING,
   }, {});
   Movie.associate = function(models) {
-    // associations can be defined here
+    
   };
   return Movie;
 };
