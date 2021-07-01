@@ -1,7 +1,4 @@
 'use strict';
-
-const { BelongsTo } = require("sequelize/types");
-
 module.exports = (sequelize, DataTypes) => {
   const MovieShelf = sequelize.define('MovieShelf', {
     user_id: DataTypes.INTEGER,
