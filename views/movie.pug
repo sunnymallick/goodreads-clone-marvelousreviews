@@ -15,8 +15,11 @@ block content
         img(src=`${movie.movieImg}` alt='movieImg' class='singleMovieImg')
         br
         label #{movie.description}
+        br
+        p User Reviews
         each review in reviews
             p #{review.User.username}: #{review.review}
+            p Rating: #{review.LikesDislike.rating}
             //- p #{review.likeDislikes_id}
         //- if locals.authenticated
         //-     if locals.user.id === review.user_id
@@ -28,11 +31,9 @@ block content
                 label Post a review and leave a rating!
                 br
                 textarea(id='review' value=review name='review')
+                label     Did you like this movie?
                 input(type='checkbox' value='true' name='likeDislike')
-                //- label(for='dropdown') Like
-                //- select(class='checkboxLike' value='like')
-                //- button(type='button' value='likeDislike') Like
-                //- radio button
+                br
                 button Post
         else
             br
