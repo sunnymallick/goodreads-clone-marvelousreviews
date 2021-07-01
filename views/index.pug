@@ -1,11 +1,28 @@
 extends layout
 
 block head
-    title='Marvelous 💥'
+    title='Marvelous💥'
+    link(rel="stylesheet" href="/stylesheets/index.css")
 
     block nav
         include navBar.pug
 
 block content
-  h1= title
-  p A spot for all Marvel fans.
+  div(class="row_title")
+    div(class="column")
+      h1="Marvelous"
+      p A spot for all Marvel movie fans.
+    div(class="column")
+      h5="Future Releases"
+      div(class="feat_movie movie1")
+        h4="BLACK WIDOW"
+        p Release Date: July 9, 2021
+      div(class="feat_movie movie2")
+        h4="SHANG-CHI AND THE LEGEND OF THE TEN RINGS"
+        p Release Date: September 3, 2021
+      div(class="feat_movie movie3")
+        h4="ETERNALS"
+        p Release Date: November 5, 2021
+      div(class="feat_movie movie4")
+        h4="SPIDER-MAN: NO WAY HOME"
+        p Release Date: December 17, 2021

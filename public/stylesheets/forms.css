@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
 
+body {
+    background-color: rgb(51, 46, 46);
+    color: white;
+}
 .center {
     position: absolute;
     top: 50%;

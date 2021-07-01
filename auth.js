@@ -23,8 +23,7 @@ const restoreUser = async (req, res, next) => {
     console.log(req.session);
 
     if (req.session.auth) {
-        // check how to use User here
-        // ??
+
         const { userId } = req.session.auth;
 
         try {
