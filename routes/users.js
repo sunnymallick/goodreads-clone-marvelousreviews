@@ -141,7 +141,9 @@ router.post('/login/demo', csrfProtection, asyncHandler(async (req, res, next) =
 
 router.get('/profile', asyncHandler(async (req, res) => {
   const movieShelf = await MovieShelf.findAll()
-  res.render('profile', { movieShelf })
+  const movieId = movieShelf.movie_id;
+  const movie = await Movie.findByPk(movieId)
+  res.render('profile', { movieShelf, movie })
 }))
 
 module.exports = router;

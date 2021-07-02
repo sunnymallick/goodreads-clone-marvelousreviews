@@ -22,5 +22,5 @@ block content
                     li= `Director: ${movie.director}`
                     li= `Cast: ${movie.cast} `
                 if locals.authenticated
-                    form(method='post' action=`/users/profile`)
+                    form(method='post' action=`/movies/${movie.id}/movieShelf`)
                         button Add To Your MovieShelf
