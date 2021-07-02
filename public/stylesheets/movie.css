@@ -1,13 +1,26 @@
 body {
     background-color: rgb(51, 46, 46);
     color: white;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://lovelytab.com/wp-content/uploads/2019/04/Marvel-Avengers-Minimalist-Backgrounds.jpg);
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 h2 {
-    text-align: center;
+    margin-left: 15%;
+    text-shadow: 0 1px 15px rgb(8, 190, 8);
 }
 
 .singleMovieImg {
-    max-height: 300px;
-    max-width: 150px;
+    height: 300px;
+    width: 200px;
+}
+
+.movieBlock {
+    width: 100%;
+    margin: 0;
+    display: inline-grid;
+    grid-template-columns: 50% 50%;
+    margin-left: 15%;
 }
