@@ -88,7 +88,7 @@ router.post('/:id(\\d+)/movieShelf', asyncHandler(async(req, res, next) => {
         })
         res.redirect('/user/profile')
     } else {
-        window.alert('Movie is already on your MovieShelf')
+        res.redirect('/movies/all')
     }
 
 }));
