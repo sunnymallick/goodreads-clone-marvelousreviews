@@ -8,7 +8,8 @@ body {
 }
 
 h2 {
-    margin-left: 15%;
+    margin-left: 20%;
+    margin-bottom: 0;
     text-shadow: 0 1px 15px rgb(8, 190, 8);
 }
 
@@ -22,5 +23,81 @@ h2 {
     margin: 0;
     display: inline-grid;
     grid-template-columns: 50% 50%;
-    margin-left: 15%;
+    margin-left: 20%;
+}
+
+.synopsis {
+    display: inline-grid;
+    grid-template-columns: 30% 70%;
+    margin-left: 20%;
+    text-shadow: 0 0 10px rgb(8, 190, 8);
+}
+
+.user_reviews {
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: -27%;
+    margin-left: 30%;
+}
+
+.user_reviews p {
+    font-size: 18px;
+    width: 25%;
+    margin-left: 37%;
+}
+
+.user_reviews h4 {
+    text-shadow: 0 0 10px rgb(8, 190, 8);
+}
+
+.ratingImg {
+    height: 50px;
+    width: 50px;
+    margin-bottom: -7%;
+    padding: 5px;
+}
+
+.rating_label {
+    margin-bottom: 10%;
+}
+
+.delete_button {
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    /* outline: none; */
+
+}
+
+.delete_button:hover {
+    background-color: red;
+    border-color: black;
+    transition: .5s;
+}
+
+.post_button {
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 1s;
+    width: 100px;
+}
+
+.post_button:hover {
+    background-color: red;
+}
+
+.form_header {
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgb(8, 190, 8);
+
 }
