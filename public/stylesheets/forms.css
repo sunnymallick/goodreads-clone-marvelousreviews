@@ -2,6 +2,10 @@
 
 body {
     background-color: rgb(51, 46, 46);
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://simplywallpaper.net/pictures/2014/08/Guardians-of-the-Galaxy-Line-Up-Wallpaper.jpg);
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
     color: white;
 }
 .center {
@@ -10,20 +14,21 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
-    background: whitesmoke;
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url(https://cdn.wallpapersafari.com/98/96/OsXow7.jpg);
     border-radius: 10px;
-    color: black;
+    background-size: cover;
+    color: white;
 }
 
 .center h1 {
     text-align: center;
     padding: 0;
-    border-bottom: 0.5px solid slategray;
+    border-bottom: 0.5px solid whitesmoke;
 }
 
 form .txt_field {
     position: relative;
-    border-bottom: 2px solid slategray;
+    border-bottom: 2px solid whitesmoke;
     margin: 30px 0;
 }
 
@@ -35,6 +40,7 @@ form .txt_field {
 .txt_field input {
     width: 100%;
     padding: 0;
+    color: white;
     height: 40px;
     font-size: 14px;
     border: none;
@@ -48,7 +54,7 @@ form .txt_field {
     left: 5px;
     transform: translateY(-180%);
     font-size: 16px;
-    color: slategrey
+    color: white
 }
 
 .submit_button {
@@ -90,7 +96,7 @@ form .txt_field {
     margin:0 0 10px 0;
     text-align: center;
     font-size: 16px;
-    color: black;
+    color: white;
 }
 
 .demo_button {
@@ -137,7 +143,7 @@ form .txt_field {
 }
 
 .error_list li {
-    color: black;
+    color: white;
     list-style: none;
     text-align: start;
     margin-left: 35px;
