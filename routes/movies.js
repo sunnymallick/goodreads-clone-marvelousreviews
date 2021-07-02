@@ -17,7 +17,8 @@ const reviewValidator = [
 
 router.get('/all', asyncHandler (async(req, res) =>{
     const movies = await Movie.findAll()
-    res.render('movies', {movies})
+    const movieShelf = await MovieShelf.findAll()
+    res.render('movies', {movies, movieShelf})
 }))
 
 
@@ -66,21 +67,31 @@ router.post('/:id(\\d+)/delete', asyncHandler(async(req, res, next) => {
     res.redirect(`/movies/${movieId}`)
 }))
 
+
+
 //add to movieshelf
 router.post('/:id(\\d+)/movieShelf', asyncHandler(async(req, res, next) => {
     const movieId = req.params.id;
     const movie = await Movie.findByPk(movieId);
     const userId = req.session.auth.userId;
     const movieImage = movie.movieImg;
-
-    await MovieShelf.create({
-        user_id: userId,
-        movie_id: movieId,
-        movieImg: movieImage
+    const existsInMovieshelf = await MovieShelf.findOne({
+        where: {
+            movie_id: movieId,
+        },
     })
+    if (!existsInMovieshelf) {
+        await MovieShelf.create({
+            user_id: userId,
+            movie_id: movieId,
+            movieImg: movieImage
+        })
+        res.redirect('/user/profile')
+    } else {
+        window.alert('Movie is already on your MovieShelf')
+    }
 
-    res.redirect('/user/profile')
-}))
+}));
 module.exports = router;
 ///unseed
 ///unmigrate
