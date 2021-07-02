@@ -55,6 +55,19 @@ img {
     color: rgb(4, 0, 255);
 }
 
+.button {
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: tomato;
+}
+
+.button:hover {
+    font-weight: 700;
+    box-shadow: 0 0 30px rgb(110, 4, 110);
+    transition: .5s;
+}
 
 /* .button:hover {
     background-color: rgba(255, 0, 0, 0.15);
