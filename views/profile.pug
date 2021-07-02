@@ -18,7 +18,9 @@ block content
         p Following 75
 
         p My MovieShelf
-
+            each movie in movieShelf
+                br
+                label #{movie.title}
         //- insert user's favorite movies here (their own library)
         p Likes
         //- insert user's liked movies

@@ -21,8 +21,6 @@ block content
                     li= `Year: ${movie.releaseYear}`
                     li= `Director: ${movie.director}`
                     li= `Cast: ${movie.cast} `
-                form(class="review-form")
-                .form-group
-                    label(for='review') Review:
-                    input#message.form-control(type='review', name="review", placeholder='What did you think?')
-                button.btn.btn-primary(type='submit' class='post_button') Post!
+                if locals.authenticated
+                    form(method='post' action=`/users/profile`)
+                        button Add To Your MovieShelf
