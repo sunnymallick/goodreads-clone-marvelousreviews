@@ -6,19 +6,22 @@ html
 
   body
     header
-      img(class="logo" src="../images/MarvelousLogo.png")
+      //- img(class="logo" src="../images/MarvelousLogo.png")
       nav(class="navbar")
-        if locals.authenticated
-          ul(class="navLinks")
-            li: a(class="homeLink" href="/") Home
-            li: a(class="moviesLink" href="/movies/all") Movies
-            li: a(class="myProfileLink" href="/user/profile") Welcome #{user.username}!
-            li: form(action="/user/logout" method="post")
-                button(class="button" type='submit') Logout
-        else
-          ul(class="navLinks")
-            li: a(class="homeLink" href="/") Home
-            li: a(class="moviesLink" href="/movies/all") Movies
-            li: a(class="button" href="/user/login") Login
-            li: a(class="button" href="/user/signup") SignUp
-      a(class="aboutUs" href="#") About Us
+        a(class="navbar-logo" href="/")
+          div
+            img(src="../images/MarvelousLogo.png" class="logo")
+            if locals.authenticated
+              ul(class="navLinks")
+                li: a(class="homeLink" href="/") Home
+                li: a(class="moviesLink" href="/movies/all") Movies
+                li: a(class="myProfileLink" href="/user/profile") Welcome #{user.username}!
+                li: form(action="/user/logout" method="post")
+                    button(class="button" type='submit') Logout
+            else
+              ul(class="navLinks")
+                li: a(class="homeLink" href="/") Home
+                li: a(class="moviesLink" href="/movies/all") Movies
+                li: a(class="button" href="/user/login") Login
+                li: a(class="button" href="/user/signup") SignUp
+                li: a(class="aboutUs" href="#") About Us
