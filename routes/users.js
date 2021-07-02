@@ -147,4 +147,7 @@ router.get('/profile', asyncHandler(async (req, res) => {
   res.render('profile', { alphabeticalOrderMovieShelf, movie })
 }))
 
+// router.get('/contact', asyncHandler(async (req, res) => {
+//   res.render('contact')
+// }))
 module.exports = router;
