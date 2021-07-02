@@ -27,7 +27,7 @@ body {
     -moz-transition: 1s;
     -webkit-transition: 1s;
     transition: 1s;
-    box-shadow: 5px 5px 5px rgb(110, 4, 110);
+    box-shadow: 0 0 30px rgb(110, 4, 110);
 }
 
 .movie_container {
@@ -50,4 +50,18 @@ h1 {
     text-align: left;
     margin-left: -40px;
     text-shadow: 0 1px 5px yellow;
+}
+
+.add_button {
+    background: indigo;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .5s;
+    margin-left: 7%;
+}
+
+.add_button:hover {
+    box-shadow: 0px 0px 15px yellow;
+    color: yellow;
 }

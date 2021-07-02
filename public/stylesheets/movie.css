@@ -1,7 +1,7 @@
 body {
     background-color: rgb(51, 46, 46);
     color: white;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://lovelytab.com/wp-content/uploads/2019/04/Marvel-Avengers-Minimalist-Backgrounds.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url(https://lovelytab.com/wp-content/uploads/2019/04/Marvel-Avengers-Minimalist-Backgrounds.jpg);
     background-position: top;
     background-size: cover;
     background-attachment: fixed;
@@ -99,5 +99,24 @@ h2 {
     font-size: 20px;
     font-weight: 600;
     text-shadow: 0 0 10px rgb(8, 190, 8);
+}
 
+.user_reviews p {
+    text-shadow: 0 0 5px red;
+}
+
+form textarea {
+    background: none;
+    color: white;
+    width: 30%;
+    height: 50%;
+    border-color: green;
+    resize: none;
+    height: 150px;
+}
+
+.non_user {
+    text-shadow: 0 0 10px rgb(251, 255, 9);
+    font-weight: 700;
+    font-size: 20px;
 }

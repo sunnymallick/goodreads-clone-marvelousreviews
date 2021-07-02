@@ -7,10 +7,10 @@ block head
       include navBar.pug
 
 block content
-    h2 welcome #{locals.user.username}
-    div(class='InfoBox') Profile Information
+    h2 Welcome, #{locals.user.username}!
+    div(class='InfoBox')
         br
-        img(src="", alt="avatar")
+        img(class="avatar" src="https://avatarfiles.alphacoders.com/604/60402.jpg", alt="avatar")
         //- username
 
         p Followers 300
