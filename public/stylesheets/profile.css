@@ -15,4 +15,10 @@ body {
         padding: 0;
 }
 
+h2 {
+    text-shadow: 0 0 30px red;
+    text-align: center;
+}
+
+
 
