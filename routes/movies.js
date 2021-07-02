@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Movie, Review, User, LikesDislike } = require('../db/models');
+const { Movie, Review, User, LikesDislike, MovieShelf } = require('../db/models');
 const { asyncHandler, csrfProtection } = require('../routes/utils')
 const { check, validationResult } = require('express-validator');
 
@@ -52,7 +52,8 @@ router.post('/:id(\\d+)', reviewValidator, csrfProtection, asyncHandler(async (r
         user_id: userId,
         review: review,
         likeDislikes_id: newLike.id
-    })
+    });
+
     res.redirect(`/movies/${movie.id}`)
 }))
 
@@ -65,6 +66,21 @@ router.post('/:id(\\d+)/delete', asyncHandler(async(req, res, next) => {
     res.redirect(`/movies/${movieId}`)
 }))
 
+//add to movieshelf
+router.post('/:id(\\d+)/movieShelf', asyncHandler(async(req, res, next) => {
+    const movieId = req.params.id;
+    const movie = await Movie.findByPk(movieId);
+    const userId = req.session.auth.userId;
+    const movieImage = movie.movieImg;
+
+    await MovieShelf.create({
+        user_id: userId,
+        movie_id: movieId,
+        movieImg: movieImage
+    })
+
+    res.redirect('/user/profile')
+}))
 module.exports = router;
 ///unseed
 ///unmigrate
