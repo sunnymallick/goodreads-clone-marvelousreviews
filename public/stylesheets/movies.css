@@ -27,7 +27,7 @@ body {
     -moz-transition: 1s;
     -webkit-transition: 1s;
     transition: 1s;
-    box-shadow: 5px 5px 5px rgb(39, 1, 39);
+    box-shadow: 5px 5px 5px rgb(110, 4, 110);
 }
 
 .movie_container {
@@ -36,9 +36,18 @@ body {
     display: inline-grid;
     grid-template-columns: 33.33% 33.33% 33.33%;
     margin-left: 15%;
+    padding-bottom: 50px;
 }
 
 h1 {
-    text-shadow: 0 0 30px red;
+    text-shadow: 0 1px 15px orange;
     text-align: center;
+}
+
+.movie_stats li {
+    list-style: none;
+    font-size: 18px;
+    text-align: left;
+    margin-left: -40px;
+    text-shadow: 0 1px 5px yellow;
 }
