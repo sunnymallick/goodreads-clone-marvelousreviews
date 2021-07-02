@@ -17,8 +17,21 @@ body {
 
 h2 {
     text-shadow: 0 0 30px red;
-    text-align: center;
+    text-align: left;
 }
 
+h2:hover {
+    opacity: 1.0,
+}
+
+.avatar {
+    max-width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    
+}
+.avatar:hover {
+    opacity: 1.3;
+}
 
 
