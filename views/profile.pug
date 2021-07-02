@@ -18,7 +18,10 @@ block content
         p Following 75
 
         p My MovieShelf
-
+            br
+            each movie in alphabeticalOrderMovieShelf
+                a(href=`/movies/${movie.movie_id}`)
+                    img(src=`${movie.movieImg}`, alt="movie" class='movieShelf')
         //- insert user's favorite movies here (their own library)
         p Likes
         //- insert user's liked movies

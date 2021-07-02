@@ -1,14 +1,13 @@
 'use strict';
-
 module.exports = (sequelize, DataTypes) => {
   const MovieShelf = sequelize.define('MovieShelf', {
     user_id: DataTypes.INTEGER,
-    title: DataTypes.STRING,
-
+    movie_id: DataTypes.INTEGER,
+    movieImg: DataTypes.STRING
   }, {});
   MovieShelf.associate = function(models) {
     MovieShelf.belongsTo(models.User, {foreignKey: 'user_id'})
-    MovieShelf.hasMany(models.Movie, {foreignKey: 'movie_id'})
+    MovieShelf.belongsTo(models.Movie, {foreignKey: 'movie_id'})
   };
   return MovieShelf;
 };

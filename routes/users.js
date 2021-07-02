@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { csrfProtection, asyncHandler } = require('./utils');
-const { User } = require('../db/models');
+const { User, Movie, MovieShelf } = require('../db/models');
 const bcrypt = require('bcryptjs');
 const { check, validationResult } = require('express-validator');
 const { loginUser, logoutUser, requireAuth, restoreUser } = require('../auth');
@@ -135,13 +135,16 @@ router.post('/login/demo', csrfProtection, asyncHandler(async (req, res, next) =
 
 
 /* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
-});
+// router.get('/profile', function (req, res, next) {
+//   res.send('respond with a resource');
+// });
 
-router.get('/profile', (req, res) => {
-  res.render('profile')
-  // res.send('hello from the profile page')
-})
+router.get('/profile', asyncHandler(async (req, res) => {
+  const movieShelf = await MovieShelf.findAll()
+  const alphabeticalOrderMovieShelf = movieShelf.sort((a, b) => a.movie_id - b.movie_id)
+  const movieId = movieShelf.movie_id;
+  const movie = await Movie.findByPk(movieId)
+  res.render('profile', { alphabeticalOrderMovieShelf, movie })
+}))
 
 module.exports = router;
