@@ -3,6 +3,7 @@ extends layout
 block head
     title='Marvelous'
     link(rel="stylesheet" href="/stylesheets/index.css")
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
 
     block nav
         include navBar.pug
@@ -26,3 +27,24 @@ block content
       div(class="feat_movie movie4")
         h4="Thor: Love And Thunder"
         p Release Date: May 6, 2022
+  footer(class='footer')
+    div(class='footer__div')
+      div
+      div(class='Sunny')
+        h3='Sunny Mallick'
+        a(class='github__icon' href='https://github.com/sunnymallick')
+          i.fab.fa-github-square
+        a(class='linkedin__icon' href='https://www.linkedin.com/in/sunny-mallick-896a33169/')
+          i.fab.fa-linkedin
+      div(class='Serge')
+        h3='Serge Kassangana'
+        a(class='github__icon' href='https://github.com/sergeveli')
+          i.fab.fa-github-square
+        a(class='linkedin__icon' href='https://www.linkedin.com/in/sergekassangana/')
+          i.fab.fa-linkedin
+      div(class='Antonio')
+        h3='Antonio Davila-Olivares'
+        a(class='github__icon' href='https://github.com/D3vila')
+          i.fab.fa-github-square
+        a(class='linkedin__icon' href='https://www.linkedin.com/in/antonio-davila-olivares-843856212/')
+          i.fab.fa-linkedin

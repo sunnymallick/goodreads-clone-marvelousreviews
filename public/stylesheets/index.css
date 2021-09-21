@@ -3,7 +3,7 @@ body {
     /* height: 100vh; */
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(https://wallpapercrafter.com/desktop/153801-The-Avengers-artwork-fantasy-art-Thanos-Doctor-Strange-Iron-Man-Spider-Man-Starlord-Black-Panther-Marvel-Comics-Marvel-Cinematic-Universe.jpg);
-    background-position: center;
+    background-position: top;
     background-size: cover;
     background-attachment: fixed;
     color: white;
@@ -109,4 +109,29 @@ h4 {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: 100px 325px 325px;
+}
+
+.footer__div {
+    text-align: center;
+    padding: 3px;
+    font-size: 30px;
+    margin-top: 50px;
+    background: linear-gradient(0deg, #00263d 50%, rgb(48, 171, 228) 90%);
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.Sunny {
+    grid-column: 2/3;
+    grid-row: 1;
+}
+
+.Serge {
+    grid-column: 3/4;
+    grid-row: 1;
+}
+
+.Antonio {
+    grid-column: 4/5;
+    grid-row: 1;
 }
