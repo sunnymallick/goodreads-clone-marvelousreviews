@@ -1,8 +1,9 @@
 extends layout
 
 block head
-    title='Marvelous💥'
+    title='Marvelous'
     link(rel="stylesheet" href="/stylesheets/index.css")
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
 
     block nav
         include navBar.pug
@@ -12,17 +13,42 @@ block content
     div(class="column")
       h1="Marvelous"
       p(class="site_descrip") A spot for all Marvel movie fans.
-    div(class="column")
+    div(class="column1")
       h5="Future Releases"
       div(class="feat_movie movie1")
-        h4="BLACK WIDOW"
-        p Release Date: July 9, 2021
-      div(class="feat_movie movie2")
-        h4="SHANG-CHI AND THE LEGEND OF THE TEN RINGS"
-        p Release Date: September 3, 2021
-      div(class="feat_movie movie3")
         h4="ETERNALS"
         p Release Date: November 5, 2021
-      div(class="feat_movie movie4")
+      div(class="feat_movie movie2")
         h4="SPIDER-MAN: NO WAY HOME"
         p Release Date: December 17, 2021
+      div(class="feat_movie movie3")
+        h4="Doctor Strange In The Multiverse Of Madness"
+        p Release Date: March 25, 2022
+      div(class="feat_movie movie4")
+        h4="Thor: Love And Thunder"
+        p Release Date: May 6, 2022
+  footer(class='footer')
+    div(class='footer__div')
+      div(class='javisPic')
+      div(class='Sunny')
+        h3='Sunny Mallick'
+        a(class='github__icon1' href='https://github.com/sunnymallick')
+          i.fab.fa-github-square
+        a(class='linkedin__icon1' href='https://www.linkedin.com/in/sunny-mallick-896a33169/')
+          i.fab.fa-linkedin
+      div(class='Serge')
+        h3='Serge Kassangana'
+        a(class='github__icon2' href='https://github.com/sergeveli')
+          i.fab.fa-github-square
+        a(class='linkedin__icon2' href='https://www.linkedin.com/in/sergekassangana/')
+          i.fab.fa-linkedin
+      div(class='Antonio')
+        h3='Antonio Davila-Olivares'
+        a(class='github__icon3' href='https://github.com/D3vila')
+          i.fab.fa-github-square
+        a(class='linkedin__icon3' href='https://www.linkedin.com/in/antonio-davila-olivares-843856212/')
+          i.fab.fa-linkedin
+      div(class='repo__div')
+        a(class='repo__icon' href="https://github.com/sunnymallick/goodreads-clone-marvelousreviews")
+          h3='GitHub Repo'
+          i.fas.fa-code
