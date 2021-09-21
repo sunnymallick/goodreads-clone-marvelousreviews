@@ -1,11 +1,14 @@
 body {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(https://wallpapercrafter.com/desktop/153801-The-Avengers-artwork-fantasy-art-Thanos-Doctor-Strange-Iron-Man-Spider-Man-Starlord-Black-Panther-Marvel-Comics-Marvel-Cinematic-Universe.jpg);
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     color: white;
+    padding: 0;
+    margin: 0;
 }
 
 .row_title {
@@ -30,8 +33,8 @@ p{
 
 .feat_movie {
     width: 200px;
-    height: 200px;
-    display: inline-table;
+    height: 275px;
+    /* display: inline-table; */
     border-radius: 10px;
     padding: 15px 25px;
     margin: 10px 12px;
@@ -42,25 +45,37 @@ p{
 }
 
 .movie1 {
-    background-image: url(https://concertposter.org/wp-content/uploads/2020/05/black-widow_stand-disp.jpg);
+    background-position: bottom;
+    background-image: url(https://terrigen-cdn-dev.marvel.com/content/prod/1x/online_10.jpg);
+    grid-column: 1/2;
+    grid-row: 2/3;
 }
 
 .movie2 {
-    background-image: url(https://cultmtl.com/wp-content/uploads/2021/04/BC97ADC5-C2C7-4BC7-A096-6CD9FA508AEB-1296x1920.jpeg)
+    background-position: top;
+    background-image: url(https://terrigen-cdn-dev.marvel.com/content/prod/1x/sn_lob_crd_01.jpg);
+    grid-column: 2/3;
+    grid-row: 2/3;
 }
 
 .movie3 {
-    background-position: bottom;
-    background-image: url(https://terrigen-cdn-dev.marvel.com/content/prod/1x/online_10.jpg);
+    background-position: top;
+    background-image: url(https://posterspy.com/wp-content/uploads/2020/02/1-8-1-1500x2250.png);
+    grid-column: 1/2;
+    grid-row: 3/4;
 }
 
 .movie4 {
-    background-position: top;
-    background-image: url(https://terrigen-cdn-dev.marvel.com/content/prod/1x/sn_lob_crd_01.jpg);
+
+    background-image: url(https://wegotthiscovered.com/wp-content/uploads/2020/07/Thor-Love-And-Thunder-Epic-Fan-Poster.jpg);
+    grid-column: 2/3;
+    grid-row: 3/4;
 }
 
 .feat_movie:hover {
     transform: translateY(-10px);
+    cursor: default;
+
 }
 
 h4 {
@@ -73,10 +88,12 @@ h4 {
     font-size: 15px;
 }
 
-.column h5 {
+.column1 h5 {
     margin-left: 225px;
     text-shadow: 0 0 30px red;
     font-size: 20px;
+    grid-column: 1/3;
+    grid-row: 1/3;
 }
 .column h1 {
     text-shadow: 0 0 30px red;
@@ -86,4 +103,10 @@ h4 {
 .site_descrip {
     margin-left: 9%;
     text-shadow: 0 0 5px orange;
+}
+
+.column1 {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 100px 325px 325px;
 }

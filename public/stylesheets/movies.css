@@ -1,6 +1,6 @@
 body {
     background-color: rgb(51, 46, 46);
-    height: 100vh;
+    /* height: 100vh; */
     color: white;
     width: 100%;
     background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(https://cdnb.artstation.com/p/assets/images/images/008/553/927/medium/alan-bouret-ironman-arnold-artstation.jpg?1513526155);
@@ -40,6 +40,7 @@ body {
 }
 
 h1 {
+    
     text-shadow: 0 1px 15px orange;
     text-align: center;
 }
