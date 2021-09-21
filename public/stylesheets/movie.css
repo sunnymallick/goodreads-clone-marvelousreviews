@@ -10,57 +10,120 @@ body {
 }
 
 h2 {
-    margin-left: 20%;
     margin-bottom: 0;
     text-shadow: 0 1px 15px rgb(8, 190, 8);
 }
 
+.individualPage {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.movie__info {
+    grid-column: 1;
+    display:grid;
+    grid-template-columns: 425px 375px;
+    grid-template-rows: 60px 50px 50px 125px 70px 245px 150px;
+    margin-left: 150px;
+    margin-top: 50px;
+}
+
 .singleMovieImg {
-    height: 300px;
-    width: 200px;
+    height: 600px;
+    width: 400px;
+    /* width: 300px; */
+    border-radius: 10px;
 }
 
 .movieBlock {
     width: 100%;
     margin: 0;
-    display: inline-grid;
+    grid-column: 1/2;
+    /* display: inline-grid;
     grid-template-columns: 50% 50%;
-    margin-left: 20%;
+    margin-left: 20%; */
+}
+
+.movieName {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    font-size: 20px;
+}
+
+.releaseYear {
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+}
+
+.director {
+    grid-column: 2/3;
+    grid-row: 3/4;
+
+}
+
+.cast {
+    grid-column: 2/3;
+    grid-row: 4/5;
+
+}
+
+.tagline {
+    grid-column: 2/3;
+    grid-row: 5/6;
+
+}
+
+.quote {
+    grid-column: 2/3;
+    grid-row: 6/7;
+
+}
+
+.movie__info div {
+    /* align-self: center;
+    justify-self: center; */
 }
 
 .synopsis {
-    display: inline-grid;
-    grid-template-columns: 30% 70%;
-    margin-left: 20%;
+    /* display: inline-grid;
+    grid-template-columns: 30% 70%; */
     text-shadow: 0 0 10px rgb(8, 190, 8);
+    grid-column: 1/3;
+    grid-row: 7/8;
 }
 
 .user_reviews {
+    grid-column: 2/3;
     text-align: center;
-    margin-bottom: 5%;
-    margin-top: -27%;
-    margin-left: 30%;
+    margin-top: 50px;
 }
 
-.user_reviews p {
+.user_reviews div {
     font-size: 18px;
-    width: 25%;
-    margin-left: 37%;
+    /* width: 25%; */
+    /* margin-left: 37%; */
+    align-items: center;
 }
 
 .user_reviews h4 {
     text-shadow: 0 0 10px rgb(8, 190, 8);
+    font-size: 30px;
 }
 
 .ratingImg {
     height: 50px;
     width: 50px;
-    margin-bottom: -7%;
-    padding: 5px;
+    margin-bottom: -45px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+
 }
 
 .rating_label {
-    margin-bottom: 10%;
+    padding-top: 20px;
+    margin-top: 20px;
+    padding-bottom: 20px;
 }
 
 .delete_button {
@@ -71,6 +134,7 @@ h2 {
     color: white;
     font-weight: 500;
     cursor: pointer;
+    margin-top: 10px;
     /* outline: none; */
 
 }
