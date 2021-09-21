@@ -116,22 +116,115 @@ h4 {
     padding: 3px;
     font-size: 30px;
     margin-top: 50px;
-    background: linear-gradient(0deg, #00263d 50%, rgb(48, 171, 228) 90%);
+    background-size: cover;
+    background-position: center;
+    /* background-position-x: 500px; */
+    border-top: 5px solid white;
+    background-image: url('https://i.pinimg.com/originals/66/06/0e/66060ef91c97f90e152bb2a04a597fa2.gif');
+    /* background: linear-gradient(0deg, rgb(0, 162, 255) 33%, rgba(255, 0, 0, 0) 33%), linear-gradient(2deg, #dd0000 66%, #ffc608 66%); */
     display: grid;
     grid-template-columns: auto auto auto auto auto;
+    padding-bottom: 30px;
 }
 
 .Sunny {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 15px rgb(0, 183, 255);
     grid-column: 2/3;
     grid-row: 1;
 }
 
+.Sunny h3 {
+    margin-bottom: 10px;
+}
+
 .Serge {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 15px rgb(0, 255, 13);
     grid-column: 3/4;
     grid-row: 1;
 }
 
+.Serge h3 {
+    margin-bottom: 10px;
+}
+
 .Antonio {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 15px rgb(255, 0, 0);
     grid-column: 4/5;
     grid-row: 1;
+}
+
+.Antonio h3 {
+    margin-bottom: 10px;
+}
+
+.github__icon1 {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 15px rgb(0, 183, 255);
+    font-size: 45px;
+    padding-right: 20px;
+}
+
+.github__icon2 {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 15px rgb(0, 255, 13);
+
+    font-size: 45px;
+    padding-right: 20px;
+}
+
+.github__icon3 {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 15px rgb(255, 0, 0);
+
+    font-size: 45px;
+    padding-right: 20px;
+}
+
+.linkedin__icon1 {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 15px rgb(0, 183, 255);
+    margin-top: 0;
+    font-size: 45px;
+
+}
+
+.linkedin__icon2 {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 15px rgb(0, 255, 13);
+    margin-top: 0;
+    font-size: 45px;
+}
+
+.linkedin__icon3 {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 15px rgb(255, 0, 0);
+    margin-top: 0;
+    font-size: 45px;
+}
+
+.javisPic {
+    background-size: cover;
+    filter: drop-shadow(5px 5px 10px rgb(255, 255, 255));
+    background-image: url('https://www.pngall.com/wp-content/uploads/2016/05/Marvel-Vision-PNG-File.png');
+}
+
+.repo__div {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 15px rgb(229, 255, 0);
+    grid-column: 5/6;
+    grid-row: 1;
+    justify-self: center;
+    align-self: end;
+}
+
+.repo__icon h3 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.repo__icon {
+    font-size: 45px;
 }

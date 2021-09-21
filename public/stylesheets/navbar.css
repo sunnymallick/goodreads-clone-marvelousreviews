@@ -96,5 +96,6 @@ header {
     grid-template-columns: 300px auto 600px;
     grid-template-rows: 90px ;
     padding-bottom: 5px;
+    border-bottom: 3px solid rgb(253, 38, 0);
 
 }
