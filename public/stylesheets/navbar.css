@@ -16,13 +16,6 @@ li, a , button {
     text-decoration: none;
 }
 
-header {
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
-    /* padding: 25px 25px; */
-}
-
 .logo {
     width: 200px;
     height: 80px;
