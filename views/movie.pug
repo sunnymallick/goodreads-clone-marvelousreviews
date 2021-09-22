@@ -10,40 +10,66 @@ block head
         include navBar.pug
 
 block content
-    h2 #{movie.name}
-    div(class='movieBlock')
-        img(src=`${movie.movieImg}` alt='movieImg' class='singleMovieImg')
-    div(class='synopsis')
-        label(class="movie_synopsis") #{movie.description}
-    div(class="user_reviews")
-        h4 User Reviews
-        each review in reviews
-            p #{review.User.username}: #{review.review}
-                br
-                if review.LikesDislike.rating == true
-                    label(class='rating-label') Rating:
-                    img(src='../images/thumbs-up.png', alt="thumbsUp" class='ratingImg')
-                else
-                    label(class='rating_label') Rating:
-                    img(src='../images/thumbs-down.png', alt='thumbsDown' class='ratingImg')
+    div(class='individualPage')
+        div(class='movie__info')
+            div(class='movieBlock')
+                img(src=`${movie.movieImg}` alt='movieImg' class='singleMovieImg')
+            div(class='movieName')
+                h2 #{movie.name}
+            div(class='releaseYear')
+                h2 Released: #{movie.releaseYear}
+            div(class='director')
+                h2 Director: #{movie.director}
+            div(class='cast')
+                h2 Cast: #{movie.cast}
+            div(class='tagline')
+                h2 #{movie.tagline}
+            div(class='quote')
+                h2 #{movie.quote}
+            div(class='synopsis')
+                h2 Synopsis: #{movie.description}
+        div(class="user_reviews")
+            h4 User Reviews
             if locals.authenticated
-                if locals.user.id === review.user_id
-                    form(method='post' action=`/movies/${review.id}/delete`)
-                        button(class='delete_button') Delete Review
-        br
-        if locals.authenticated
-            form(method='post' action=`/movies/${movie.id}`)
-                input(type='hidden' name='_csrf' value=token)
+                form(method='post' action=`/movies/${movie.id}`)
+                    div
+                        input(type='hidden' name='_csrf' value=token)
+
+                    div(class='form_header__div')
+                        label(class='form_header') Post a review and leave a rating!
+
+                    div
+                        textarea(id='review' value=review name='review')
+
+                    div
+                        label(class="form_header") Did you like this movie, click here?
+                        input(type='checkbox' value='true' name='likeDislike')
+
+                    div
+                        button(class='post_button') POST
+            else
                 br
-                label(class='form_header') Post a review and leave a rating!
-                br
-                textarea(id='review' value=review name='review')
-                br
-                label(class="form_header") Did you like this movie, click here?
-                input(type='checkbox' value='true' name='likeDislike')
-                br
-                button(class='post_button') Post
-        else
-            br
-            label(class='non_user') Please login to post a review!
+                label(class='non_user') Please login to post a review!
+            div(class='reviews__div')
+                each review in reviews
+                    div(class='eachReview__div')
+                        div(class='timeStamp')
+                            h5 #{review.createdAt.toLocaleString()}
+                        div(class='review__content')
+                            h4(class='reviewName') #{review.User.username}
+                            h4 #{review.review}
+                            div(class='ThanosThumb')
+                                if review.LikesDislike.rating == true
+                                    label(class='rating-label Up') Rating:
+                                        img(src='../images/thumbs-up.png', alt="thumbsUp" class='ratingImg')
+                                else
+                                    label(class='rating_label Down') Rating:
+                                        img(src='../images/thumbs-down.png', alt='thumbsDown' class='ratingImg')
+                        if locals.authenticated
+                            if locals.user.id === review.user_id
+                                form(method='post' action=`/movies/${review.id}/delete`)
+                                    button(class='delete_button') DELETE REVIEW
+            a(class='backtoTop' href='#top') TOP
+
+
     //-insert other comments here
