@@ -81,10 +81,6 @@ h2 {
 
 }
 
-.movie__info div {
-    /* align-self: center;
-    justify-self: center; */
-}
 
 .synopsis {
     /* display: inline-grid;
@@ -222,6 +218,7 @@ form textarea:focus {
     border: 2px solid rgb(57, 245, 0);
     margin-bottom: 20px;
     width: 700px;
+    padding-bottom: 25px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
