@@ -42,7 +42,7 @@ router.post('/signup', csrfProtection, signInValidators, asyncHandler(async (req
     // if (error) {
     //   next(error)
     // } else {
-    res.redirect('/user/:id')
+    res.redirect('/user/profile')
     // }
     // })
   } else {
