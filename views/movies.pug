@@ -13,14 +13,14 @@ block content
     h1="All Marvel Movies"
     div(class="movie_container")
         each movie in movies
-          a(href=`/movies/${movie.id}`)
             div(class="movie-pack")
-                img(src=`${movie.movieImg}` alt='movieImg' class='movieImg')
+                a(href=`/movies/${movie.id}`)
+                    img(src=`${movie.movieImg}` alt='movieImg' class='movieImg')
                 ul(class='movie_stats')
                     li= `Title: ${movie.name}`
                     li= `Year: ${movie.releaseYear}`
                     li= `Director: ${movie.director}`
-                    li= `Cast: ${movie.cast} `
+                    //- li= `Cast: ${movie.cast} `
                 if locals.authenticated
                     form(method='post' action=`/movies/${movie.id}/movieShelf`)
                         button(class='add_button') Add To Your MovieShelf

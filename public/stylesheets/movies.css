@@ -12,12 +12,14 @@ body {
 }
 
 .movieImg {
-    width: 150px;
-    height: 200px;
+    width: 200px;
+    height: 275px;
     padding: 10px 10px;
     margin: 10px 15px;
     cursor: pointer;
     transition: transform 0.5s;
+    border-radius: 20px;
+    border: 1px solid purple;
 }
 
 .movieImg:hover {
