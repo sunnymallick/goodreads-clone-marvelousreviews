@@ -40,7 +40,7 @@ body {
 }
 
 h1 {
-    
+
     text-shadow: 0 1px 15px orange;
     text-align: center;
 }
@@ -65,4 +65,17 @@ h1 {
 .add_button:hover {
     box-shadow: 0px 0px 15px yellow;
     color: yellow;
+}
+
+.backtoTop {
+    bottom: 0;
+    right: 0;
+
+    position: fixed;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    text-shadow: -1px 1px 10px rgb(157, 255, 0),
+				  1px 1px 2px rgb(55, 172, 2),
+				  1px -1px 0 rgb(0, 255, 106),
+				  -1px -1px 0 rgb(8, 255, 255);
 }
