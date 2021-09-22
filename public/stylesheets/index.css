@@ -42,6 +42,8 @@ p{
     background-position: center;
     background-size: cover;
     transition: transform 0.5s;
+    border: 2px solid lightblue;
+    box-shadow: 0 0 10px lightgreen;
 }
 
 .movie1 {
