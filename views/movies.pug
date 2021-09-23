@@ -10,18 +10,18 @@ block head
 
 block content
 
-    h1="All Marvel Movies"
+    h1="Marvel Movie Archives"
     div(class="movie_container")
         each movie in movies
             div(class="movie-pack")
                 a(href=`/movies/${movie.id}`)
                     img(src=`${movie.movieImg}` alt='movieImg' class='movieImg')
                 ul(class='movie_stats')
-                    li= `Title: ${movie.name}`
+                    li= `${movie.name}`
                     li= `Year: ${movie.releaseYear}`
                     li= `Director: ${movie.director}`
                     //- li= `Cast: ${movie.cast} `
                 if locals.authenticated
                     form(method='post' action=`/movies/${movie.id}/movieShelf`)
-                        button(class='add_button') Add To Your MovieShelf
+                        button(class='add_button') ➕ MovieShelf
     a(class='backtoTop' href='#top') TOP
