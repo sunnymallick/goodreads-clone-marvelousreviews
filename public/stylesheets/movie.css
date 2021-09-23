@@ -126,7 +126,7 @@ h2 {
 
 .delete_button {
     border: 1px solid red;
-    background-color: rgba(255, 0, 0, 0.5);
+    background: linear-gradient(1deg, #6b0000a2 50%, rgba(228, 48, 48, 0.664) 90%);
     border-radius: 25px;
     font-size: 18px;
     color: white;
@@ -141,13 +141,12 @@ h2 {
 
 .delete_button:hover {
     background-color: red;
-    border-color: black;
-    transition: .5s;
+    transition: 1s;
 }
 
 .post_button {
     border: 1px solid red;
-    background-color: rgba(255, 0, 0, 0.5);
+    background: linear-gradient(1deg, #6b0000a2 50%, rgba(228, 48, 48, 0.664) 90%);
     border-radius: 25px;
     font-size: 18px;
     color: white;

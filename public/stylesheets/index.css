@@ -19,16 +19,17 @@ body {
 }
 
 .column {
-    flex-basis: 50%;
+    flex-basis: 45%;
 }
 
 h1 {
     font-size: 80px;
 }
 
-p{
-    font-size: 20px;
-
+.column p{
+    font-size: 30px;
+    margin-left: 0px;
+    text-align: center;
 }
 
 .feat_movie {
@@ -80,26 +81,27 @@ p{
 
 }
 
-h4 {
-    font-size: 18px;
+.feat_movie h4 {
+    font-size: 20px;
     text-shadow: 0 0 15px red;
 }
 
-.feat_movie p {
+p {
     text-shadow: 0 0 15px blue;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .column1 h5 {
-    margin-left: 225px;
+    text-align: center;
     text-shadow: 0 0 30px red;
-    font-size: 20px;
+    font-size: 30px;
     grid-column: 1/3;
     grid-row: 1/3;
 }
 .column h1 {
     text-shadow: 0 0 30px red;
-    margin-left: 8%;
+    /* margin-left: 8%; */
+    text-align: center;
 }
 
 .site_descrip {

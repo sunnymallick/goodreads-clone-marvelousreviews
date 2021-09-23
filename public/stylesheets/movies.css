@@ -12,12 +12,20 @@ body {
 }
 
 .movieImg {
-    width: 150px;
-    height: 200px;
-    padding: 10px 10px;
-    margin: 10px 15px;
+    width: 200px;
+    height: 280px;
+    /* padding: 10px 10px;
+    margin: 10px 15px; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin: auto; */
     cursor: pointer;
     transition: transform 0.5s;
+    border-radius: 20px;
+    border: 2px solid rgb(195, 192, 7);
+    margin-bottom: 0;
+    margin-top: 15px;
 }
 
 .movieImg:hover {
@@ -27,39 +35,57 @@ body {
     -moz-transition: 1s;
     -webkit-transition: 1s;
     transition: 1s;
-    box-shadow: 0 0 30px rgb(110, 4, 110);
+    box-shadow: 0 0 30px rgb(99, 110, 4);
+}
+
+.movie-pack {
+    margin-bottom: 80px;
+    border: 2px solid indigo;
+    padding: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
+    border-radius: 150px;
+    background-color: rgba(147, 112, 216, 0.164);
 }
 
 .movie_container {
     width: 80%;
     margin: 0;
+    margin-top: 30px;
     display: inline-grid;
     grid-template-columns: 33.33% 33.33% 33.33%;
-    margin-left: 15%;
-    padding-bottom: 50px;
+    margin-left: 180px;
+    padding-bottom: 60px;
 }
 
 h1 {
 
-    text-shadow: 0 1px 15px orange;
+    text-shadow: 0 1px 15px rgb(255, 238, 0);
     text-align: center;
+    font-size: 40px;
 }
 
 .movie_stats li {
     list-style: none;
-    font-size: 18px;
-    text-align: left;
+    font-size: 25px;
+    text-align: center;
     margin-left: -40px;
     text-shadow: 0 1px 5px yellow;
 }
 
 .add_button {
-    background: indigo;
-    border: none;
+    background: linear-gradient(1deg, #44006b 50%, rgb(126, 48, 228) 90%);
+    border: 2px solid rgb(152, 9, 255);
     border-radius: 15px;
     cursor: pointer;
     transition: .5s;
-    margin-left: 7%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 5px;
+    padding-right: 10px;
+    margin-bottom: 15px;
+    font-size: 25px;
 }
 
 .add_button:hover {
@@ -76,6 +102,6 @@ h1 {
     margin-right: 30px;
     text-shadow: -1px 1px 10px rgb(157, 255, 0),
 				  1px 1px 2px rgb(55, 172, 2),
-				  1px -1px 0 rgb(0, 255, 106),
-				  -1px -1px 0 rgb(8, 255, 255);
+				  1px -1px 25px rgb(0, 255, 106),
+				  -1px -1px 5px rgb(8, 255, 255);
 }
