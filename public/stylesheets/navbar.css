@@ -57,18 +57,18 @@ li, a , button {
 
 .button {
     border-radius: 15px;
-    width: 100px;
+    width: 115px;
     border: 2px solid white;
     cursor: pointer;
     color: white;
-    background-color: tomato;
+    background: linear-gradient(1deg, #6b0000 50%, rgb(228, 48, 48) 90%);
     padding: 5px;
-    transition: .5s;
+    transition: 1s;
 }
 
 .button:hover {
-    font-weight: 700;
-    box-shadow: 0 0 30px rgb(110, 4, 110);
+    background: linear-gradient(1deg, #006b17 50%, rgb(114, 228, 48) 90%);
+    box-shadow: 0 0 20px rgb(0, 0, 0);
     transition: 1s;
 }
 
