@@ -87,7 +87,7 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, 
         // if (error) {
         //   next(error)
         // } else {
-        return res.redirect('/user/profile');
+        return res.redirect('/user/:id');
         // }
         // })
       }
@@ -140,14 +140,26 @@ router.post('/login/demo', csrfProtection, asyncHandler(async (req, res, next) =
 // });
 
 router.get('/profile', asyncHandler(async (req, res) => {
-  const movieShelf = await MovieShelf.findAll()
-  const alphabeticalOrderMovieShelf = movieShelf.sort((a, b) => a.movie_id - b.movie_id)
-  const movieId = movieShelf.movie_id;
+  const userId = req.session.auth.userId;
+  // const movieShelf = await MovieShelf.findAll({
+  //   includes: ['User', 'Movie']
+  // })
+  const userMovieShelf = await MovieShelf.findAll({
+    where: {
+      user_id: userId,
+    },
+  });
+  const alphabeticalOrderMovieShelf = userMovieShelf.sort((a, b) => a.movie_id - b.movie_id)
+  const movieId = userMovieShelf.movie_id;
   const movie = await Movie.findByPk(movieId)
   res.render('profile', { alphabeticalOrderMovieShelf, movie })
 }))
 
 // router.get('/contact', asyncHandler(async (req, res) => {
 //   res.render('contact')
+// }))
+
+// router.delete('/profile', asyncHandler(async (req, res) => {
+  
 // }))
 module.exports = router;

@@ -36,3 +36,12 @@ div p{
     text-shadow: 0 0 25px red;
     text-align: left;
 }
+
+.movieImg {
+    width: 150px;
+    height: 200px;
+    padding: 10px 10px;
+    margin: 10px 15px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}

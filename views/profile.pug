@@ -10,18 +10,22 @@ block content
     h2 Welcome, #{locals.user.username}!
     div(class='InfoBox')
         br
-        img(class="avatar" src="https://avatarfiles.alphacoders.com/604/60402.jpg", alt="avatar")
+        //- img(class="avatar" src="https://avatarfiles.alphacoders.com/604/60402.jpg", alt="avatar")
         //- username
-
-        p Followers 300
-
-        p Following 75
-
-        p My MovieShelf
+        p Your MovieShelf
             br
-            each movie in alphabeticalOrderMovieShelf
-                a(href=`/movies/${movie.movie_id}`)
-                    img(src=`${movie.movieImg}`, alt="movie" class='movieShelf')
+            if alphabeticalOrderMovieShelf
+                each movie in alphabeticalOrderMovieShelf
+                    a(href=`/movies/${movie.movie_id}`)
+                        img(src=`${movie.movieImg}` alt="movie" class='movieImg')
+                    p #{movie.name}
+                    button Delete Movie
+            else 
+                p You don't have any movies in your MovieShelf!
+        
+        
+        
+        
         //- insert user's favorite movies here (their own library)
         //- p Likes
         //- insert user's liked movies
