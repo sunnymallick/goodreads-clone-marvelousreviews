@@ -158,4 +158,8 @@ router.get('/profile', asyncHandler(async (req, res) => {
 // router.get('/contact', asyncHandler(async (req, res) => {
 //   res.render('contact')
 // }))
+
+// router.delete('/profile', asyncHandler(async (req, res) => {
+  
+// }))
 module.exports = router;

@@ -14,11 +14,14 @@ block content
         //- username
         p Your MovieShelf
             br
-            each movie in alphabeticalOrderMovieShelf
-                a(href=`/movies/${movie.movie_id}`)
-                    img(src=`${movie.movieImg}` alt="movie" class='movieImg')
-                p #{movie.movie_id}
-        
+            if alphabeticalOrderMovieShelf
+                each movie in alphabeticalOrderMovieShelf
+                    a(href=`/movies/${movie.movie_id}`)
+                        img(src=`${movie.movieImg}` alt="movie" class='movieImg')
+                    p #{movie.name}
+                    button Delete Movie
+            else 
+                p You don't have any movies in your MovieShelf!
         
         
         
