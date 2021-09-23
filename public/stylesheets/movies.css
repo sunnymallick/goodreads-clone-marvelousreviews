@@ -23,7 +23,7 @@ body {
     cursor: pointer;
     transition: transform 0.5s;
     border-radius: 20px;
-    border: 2px solid purple;
+    border: 2px solid rgb(195, 192, 7);
     margin-bottom: 0;
     margin-top: 15px;
 }
@@ -35,7 +35,7 @@ body {
     -moz-transition: 1s;
     -webkit-transition: 1s;
     transition: 1s;
-    box-shadow: 0 0 30px rgb(110, 4, 110);
+    box-shadow: 0 0 30px rgb(99, 110, 4);
 }
 
 .movie-pack {
