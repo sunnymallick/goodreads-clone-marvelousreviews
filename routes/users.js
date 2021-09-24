@@ -87,7 +87,7 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, 
         // if (error) {
         //   next(error)
         // } else {
-        return res.redirect('/user/:id');
+        return res.redirect('/user/profile');
         // }
         // })
       }

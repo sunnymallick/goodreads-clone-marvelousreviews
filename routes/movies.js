@@ -73,10 +73,12 @@ router.post('/:id(\\d+)/delete', asyncHandler(async(req, res, next) => {
 router.post('/:id(\\d+)/movieShelf', asyncHandler(async(req, res, next) => {
     const movieId = req.params.id;
     const movie = await Movie.findByPk(movieId);
+    console.log(req.session.auth)
     const userId = req.session.auth.userId;
     const movieImage = movie.movieImg;
     const existsInMovieshelf = await MovieShelf.findOne({
         where: {
+            user_id: userId,
             movie_id: movieId,
         },
     })
@@ -88,7 +90,7 @@ router.post('/:id(\\d+)/movieShelf', asyncHandler(async(req, res, next) => {
         })
         res.redirect('/user/profile')
     } else {
-        res.redirect('/movies/all')
+        res.redirect('/')
     }
 
 }));
