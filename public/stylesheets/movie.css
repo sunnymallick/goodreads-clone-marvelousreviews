@@ -17,13 +17,14 @@ h2 {
 .individualPage {
     display: grid;
     grid-template-columns: 50% 50%;
+    margin-bottom: 40px;
 }
 
 .movie__info {
     grid-column: 1;
     display:grid;
     grid-template-columns: 425px 375px;
-    grid-template-rows: 60px 50px 50px 125px 70px 245px 150px;
+    grid-template-rows: 100px 50px 50px 120px 70px 245px 150px;
     margin-left: 150px;
     margin-top: 50px;
 }
