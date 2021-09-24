@@ -6,6 +6,7 @@ const { check, validationResult } = require('express-validator');
 
 
 const db = require('../db/models');
+const movie = require('../db/models/movie');
 
 const reviewValidator = [
     check("review")
@@ -77,6 +78,7 @@ router.post('/:id(\\d+)/movieShelf', asyncHandler(async(req, res, next) => {
     const movieImage = movie.movieImg;
     const existsInMovieshelf = await MovieShelf.findOne({
         where: {
+            user_id: userId,
             movie_id: movieId,
         },
     })
@@ -90,8 +92,23 @@ router.post('/:id(\\d+)/movieShelf', asyncHandler(async(req, res, next) => {
     } else {
         res.redirect('/movies/all')
     }
+  
 
 }));
+
+//delete from movieshelf
+router.post('/:id(\\d+)/deleteMovieShelfItem', asyncHandler(async(req, res, next) => {
+    const movieId = req.params.id
+    console.log('-------------')
+    console.log(movieId)
+    console.log('-------------')
+    await MovieShelf.destroy({
+        where: {
+            movie_id: movieId
+        } 
+    })
+    res.redirect(`/user/profile`)
+}))
 
 module.exports = router;
 ///unseed
