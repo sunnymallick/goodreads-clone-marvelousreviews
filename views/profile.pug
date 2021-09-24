@@ -23,7 +23,8 @@ block content
                         each movie in alphabeticalOrderMovieShelf
                             div(class='movie__onShelf')
                                 div(class='delete__buttonShelf')
-                                    button ➖ MovieShelf
+                                  form(method='post' action=`/movies/${movie.Movie.id}/deleteMovieShelfItem`)
+                                      button ➖ MovieShelf
                                 a(href=`/movies/${movie.movie_id}`)
                                     img(src=`${movie.movieImg}` alt="movie" class='movieImg')
                                 div
@@ -31,10 +32,7 @@ block content
                 a(class='backtoTop' href='#top') TOP
             else
                 h2 You don't have any movies in your MovieShelf!
-
-
-
-
+                
         //- insert user's favorite movies here (their own library)
         //- p Likes
         //- insert user's liked movies

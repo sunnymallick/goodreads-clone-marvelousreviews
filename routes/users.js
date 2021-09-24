@@ -148,6 +148,7 @@ router.get('/profile', asyncHandler(async (req, res) => {
     where: {
       user_id: userId,
     },
+    include: ['Movie']
   });
   const alphabeticalOrderMovieShelf = userMovieShelf.sort((a, b) => a.movie_id - b.movie_id)
   const movieId = userMovieShelf.movie_id;
