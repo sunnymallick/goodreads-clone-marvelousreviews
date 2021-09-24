@@ -45,3 +45,16 @@ div p{
     cursor: pointer;
     transition: transform 0.5s;
 }
+
+.add_button {
+    background: linear-gradient(1deg, #44006b 50%, rgb(126, 48, 228) 90%);
+    border: 2px solid rgb(152, 9, 255);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .5s;
+    display: block;
+    padding: 5px;
+    padding-right: 10px;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
