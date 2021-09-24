@@ -7,25 +7,34 @@ block head
       include navBar.pug
 
 block content
-    h2 Welcome, #{locals.user.username}!
+    div(class='Profile__title')
+        h2 Welcome, #{locals.user.username}! Member since #{`${locals.user.createdAt}`.substring(4, 15)}
     div(class='InfoBox')
         br
         //- img(class="avatar" src="https://avatarfiles.alphacoders.com/604/60402.jpg", alt="avatar")
         //- username
-        p Your MovieShelf
-            br
+        p 📼 #{locals.user.username}'s Marvel Movie Shelf 📼
+        p You currently have #{alphabeticalOrderMovieShelf.length} Movies on your shelf
+
             if alphabeticalOrderMovieShelf
-                each movie in alphabeticalOrderMovieShelf
-                    a(href=`/movies/${movie.movie_id}`)
-                        img(src=`${movie.movieImg}` alt="movie" class='movieImg')
-                    p #{movie.name}
-                    button Delete Movie
-            else 
-                p You don't have any movies in your MovieShelf!
-        
-        
-        
-        
+                div(class='movieShelf__div')
+                    img(src="../images/shelf.jpg" class='BookShelf' alt="bookshelf")
+                    div(class='shelves')
+                        each movie in alphabeticalOrderMovieShelf
+                            div(class='movie__onShelf')
+                                div(class='delete__buttonShelf')
+                                    button ➖ MovieShelf
+                                a(href=`/movies/${movie.movie_id}`)
+                                    img(src=`${movie.movieImg}` alt="movie" class='movieImg')
+                                div
+                                    h3(class='movieProfileName') #{movie.name}
+                a(class='backtoTop' href='#top') TOP
+            else
+                h2 You don't have any movies in your MovieShelf!
+
+
+
+
         //- insert user's favorite movies here (their own library)
         //- p Likes
         //- insert user's liked movies
