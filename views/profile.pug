@@ -7,13 +7,14 @@ block head
       include navBar.pug
 
 block content
-    h2 Welcome, #{locals.user.username}!
-    h2 Member since #{`${locals.user.createdAt}`.substring(4, 15)}
+    div(class='Profile__title')
+        h2 Welcome, #{locals.user.username}! Member since #{`${locals.user.createdAt}`.substring(4, 15)}
     div(class='InfoBox')
         br
         //- img(class="avatar" src="https://avatarfiles.alphacoders.com/604/60402.jpg", alt="avatar")
         //- username
-        p Your MovieShelf
+        p 📼 #{locals.user.username}'s Marvel Movie Shelf 📼
+        p You currently have #{alphabeticalOrderMovieShelf.length} Movies on your shelf
 
             if alphabeticalOrderMovieShelf
                 div(class='movieShelf__div')

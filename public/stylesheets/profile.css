@@ -57,7 +57,9 @@ div p{
     margin-bottom: 100px;
     position: absolute;
     z-index: -1;
-    box-shadow: 0 0 20px red;
+    box-shadow: 0 0 40px rgb(255, 110, 243);
+    border: 3px solid rgb(254, 215, 255);
+    border-radius: 10px;
     /* filter: brightness(10%) contrast(50%) hue-rotate(80%) saturate(80%); */
     /* filter: brightness(var(--value, 5)); --value:1;
     filter: contrast(var(--value, 5)); --value:1;
@@ -70,32 +72,41 @@ div p{
 }
 
 .InfoBox {
-
     padding-bottom: 100px;
 }
 
-/* .movieProfileName {
-    font-size: 30px;
+.InfoBox p {
     text-align: center;
-} */
-.movie__onShelf {
-    /* justify-items: center;
-    align-items: start; */
-    /* margin-top: 60px;
-    margin-left: 20px; */
-
-
+    font-size: 40px;
 }
+
+.Profile__title h2{
+    text-align: center;
+    margin-top: 150px;
+    font-size: 50px;
+}
+
 
 .delete__buttonShelf{
     width: 150px;
     margin-left: 12px;
+    margin-bottom: 10px;
+
 
 }
 
 .delete__buttonShelf button {
     font-size: 20px;
     border-radius: 15px;
+    background: linear-gradient(1deg, #44006b 50%, rgb(126, 48, 228) 90%);
+    border: 2px solid rgb(251, 255, 0);
+    padding: 2px;
+    padding-right: 15px;
+}
+
+.delete__buttonShelf button:hover {
+    cursor: pointer;
+    background: linear-gradient(1deg, #b337fb 10%, rgb(60, 0, 138) 90%);
 }
 
 .movieImg {
@@ -106,7 +117,8 @@ div p{
     /* margin: 10px 15px; */
     cursor: pointer;
     transition: transform 0.5s;
-    box-shadow: 0 0 15px red;
+    box-shadow: 0 0 15px rgb(72, 255, 0);
+    border: 2px solid green;
 }
 
 .backtoTop {
