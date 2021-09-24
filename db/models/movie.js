@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     quote: DataTypes.STRING,
   }, {});
   Movie.associate = function(models) {
-    // Movie.belongsTo(models.MovieShelf, { foreignKey: 'movie_id' });
+    Movie.hasMany(models.MovieShelf, { foreignKey: 'movie_id' });
   };
   return Movie;
 };
