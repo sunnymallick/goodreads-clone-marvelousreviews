@@ -19,29 +19,117 @@ h2 {
     font-size: 36px;
     text-shadow: 0 0 30px red;
     text-align: left;
+    z-index: 2;
 }
 
-.avatar {
+/* .avatar {
     max-width: 130%;
     height: 130%;
     opacity: 0.8;
-    
-}
-.avatar:hover {
-    opacity: 1.3;
 }
 
+.avatar:hover {
+    opacity: 1.3;
+} */
+
 div p{
-    font-size: 24px;
+    font-size: 30px;
     text-shadow: 0 0 25px red;
-    text-align: left;
+
+    /* text-align: left; */
+}
+
+.movieShelf__div {
+    z-index: -2;
+    margin-left: 19%;
+}
+
+.shelves {
+    display: grid;
+    grid-template-columns: 185px 185px 185px 185px 185px 185px;
+    grid-template-rows: 295px 295px 295px 295px 295px;
+    padding-top: 90px;
+    padding-left: 70px;
+}
+
+.BookShelf {
+    width: 1200px;
+    margin-bottom: 100px;
+    position: absolute;
+    z-index: -1;
+    box-shadow: 0 0 40px rgb(255, 110, 243);
+    border: 3px solid rgb(254, 215, 255);
+    border-radius: 10px;
+    /* filter: brightness(10%) contrast(50%) hue-rotate(80%) saturate(80%); */
+    /* filter: brightness(var(--value, 5)); --value:1;
+    filter: contrast(var(--value, 5)); --value:1;
+    filter: hue-rotate(var(--value, 360deg)); --value:323deg; */
+    /* filter: saturate(var(--value, 5)); --value:2; */
+    filter: opacity(var(--value, 100%)); --value:75%;
+    /* filter: sepia(var(--value, 100%)); --value:1%; */
+    /* filter: hue-rotate(var(--value, 360deg)); --value:250deg; */
+
+}
+
+.InfoBox {
+    padding-bottom: 100px;
+}
+
+.InfoBox p {
+    text-align: center;
+    font-size: 40px;
+}
+
+.Profile__title h2{
+    text-align: center;
+    margin-top: 150px;
+    font-size: 50px;
+}
+
+
+.delete__buttonShelf{
+    width: 150px;
+    margin-left: 12px;
+    margin-bottom: 10px;
+
+
+}
+
+.delete__buttonShelf button {
+    font-size: 20px;
+    border-radius: 15px;
+    background: linear-gradient(1deg, #44006b 50%, rgb(126, 48, 228) 90%);
+    border: 2px solid rgb(251, 255, 0);
+    padding: 2px;
+    padding-right: 15px;
+}
+
+.delete__buttonShelf button:hover {
+    cursor: pointer;
+    background: linear-gradient(1deg, #b337fb 10%, rgb(60, 0, 138) 90%);
 }
 
 .movieImg {
     width: 150px;
-    height: 200px;
-    padding: 10px 10px;
-    margin: 10px 15px;
+    height: 225px;
+    border-radius: 15px;
+    /* padding: 10px 10px; */
+    /* margin: 10px 15px; */
     cursor: pointer;
     transition: transform 0.5s;
+    box-shadow: 0 0 15px rgb(72, 255, 0);
+    border: 2px solid green;
+}
+
+.backtoTop {
+    bottom: 0;
+    right: 0;
+
+    position: fixed;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    text-shadow: -1px 1px 10px rgb(157, 255, 0),
+				  1px 1px 2px rgb(55, 172, 2),
+				  1px -1px 25px rgb(0, 255, 106),
+				  -1px -1px 5px rgb(8, 255, 255);
 }
