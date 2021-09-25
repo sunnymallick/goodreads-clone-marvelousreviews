@@ -5,7 +5,15 @@ Marvelous is an app based on GoodReads website that allows users to review Marve
 ** A live link to the website can be found here: https://marvelousreviews.herokuapp.com/ **
 
 ## WEBSITE WALK-THROUGH 
-(GIF COMING SOON)
+### Home page, Movies page, and individual movie page.
+![marvelouspages](https://user-images.githubusercontent.com/79862908/134751224-23ed62c2-10f5-4bb8-b1fc-7778338efb52.gif)
+
+### Leave a review on movie and delete review.
+![marvelousreviews](https://user-images.githubusercontent.com/79862908/134751335-b816499b-db04-4586-983e-b02b9152c191.gif)
+
+### Add movie to profile movieShelf and remove it from movieShelf.
+![marvelousmovieshelf](https://user-images.githubusercontent.com/79862908/134751444-0c1283e9-7ada-48a8-b497-af7fe139357f.gif)
+
 
 ## FEATURES
 * Sign up with user name, email, and password
