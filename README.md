@@ -38,7 +38,7 @@ Marvelous is an app based on GoodReads website that allows users to review Marve
 * ADD MORE
 
 ## MARVELOUS CREATED BY:
-* Sunny [@sunnymallick](https://github.com/sunnymallick)
-* Serge [@sergeveli](https://github.com/sergeveli)
-* Antonio [@D3vila](https://github.com/D3vila)
+* Sunny Mallick [@sunnymallick](https://github.com/sunnymallick)
+* Serge Kassangana [@sergeveli](https://github.com/sergeveli)
+* Antonio Davila-Olivares [@D3vila](https://github.com/D3vila)
 
