@@ -1,6 +1,6 @@
 # ![thanos](https://github.com/Elaniobro/slack-emojis/blob/master/marvel/avengers/avenger-infinity-gauntlet.png?raw=true) WELCOME TO MARVELOUS ![thanos](https://github.com/Elaniobro/slack-emojis/blob/master/marvel/avengers/avenger-infinity-gauntlet.png?raw=true)
 
-Marvelous is an app based on GoodReads website that allows users to review Marvel movies and add movies to user's profile bookshelf. Marvelous was created with Sequelize, JavaScript, Express and PUG (needs to be edited).
+Marvelous is an app based on GoodReads website that allows users to review Marvel movies and add movies to user's profile bookshelf. Marvelous was created with Sequelize, JavaScript, Express and PUG.
 
 ** A live link to the website can be found here: https://marvelousreviews.herokuapp.com/ **
 
