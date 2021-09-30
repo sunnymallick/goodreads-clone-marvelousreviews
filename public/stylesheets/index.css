@@ -115,11 +115,18 @@ p {
     grid-template-rows: 100px 325px 325px;
 }
 
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* height: 2.5rem; */
+}
+
 .footer__div {
     text-align: center;
-    padding: 3px;
+    /* padding: 3px; */
     font-size: 30px;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     background-size: cover;
     background-position: center;
     /* background-position-x: 500px; */
