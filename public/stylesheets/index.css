@@ -16,6 +16,7 @@ body {
     height: 70%;
     align-items: center;
     margin-left: 10%;
+
 }
 
 .column {
@@ -119,14 +120,14 @@ p {
     position: absolute;
     bottom: 0;
     width: 100%;
-    /* height: 2.5rem; */
+    height: 2.5rem;
 }
 
 .footer__div {
     text-align: center;
-    /* padding: 3px; */
+    padding: 3px;
     font-size: 30px;
-    /* margin-top: 50px; */
+    margin-top: 50px;
     background-size: cover;
     background-position: center;
     /* background-position-x: 500px; */
@@ -218,6 +219,7 @@ p {
 
 .javisPic {
     background-size: cover;
+    margin-left: 20px;
     filter: drop-shadow(5px 5px 10px rgb(255, 255, 255));
     background-image: url('https://www.pngall.com/wp-content/uploads/2016/05/Marvel-Vision-PNG-File.png');
 }
