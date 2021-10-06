@@ -32,10 +32,10 @@ Marvelous is an app based on GoodReads that allows users to review Marvel movies
 * Sequelize
 * PUG
 * JavaScript
+* HTML
 * Pure CSS
 * Heroku
 * Express
-* ADD MORE
 
 ## MARVELOUS CREATED BY:
 * Sunny Mallick [@sunnymallick](https://github.com/sunnymallick)
