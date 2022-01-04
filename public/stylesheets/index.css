@@ -49,29 +49,29 @@ h1 {
 }
 
 .movie1 {
-    background-position: bottom;
-    background-image: url(https://terrigen-cdn-dev.marvel.com/content/prod/1x/online_10.jpg);
+    background-position: top;
+    background-image: url(https://posterspy.com/wp-content/uploads/2020/02/1-8-1-1500x2250.png);
     grid-column: 1/2;
     grid-row: 2/3;
 }
 
 .movie2 {
     background-position: top;
-    background-image: url(https://terrigen-cdn-dev.marvel.com/content/prod/1x/sn_lob_crd_01.jpg);
+    background-image: url(https://wegotthiscovered.com/wp-content/uploads/2020/07/Thor-Love-And-Thunder-Epic-Fan-Poster.jpg);
     grid-column: 2/3;
     grid-row: 2/3;
 }
 
 .movie3 {
     background-position: top;
-    background-image: url(https://posterspy.com/wp-content/uploads/2020/02/1-8-1-1500x2250.png);
+    background-image: url(https://www.themoviedb.org/t/p/original/71BTsmtt5BN0vkefX38H5tXvKA.jpg);
     grid-column: 1/2;
     grid-row: 3/4;
 }
 
 .movie4 {
-
-    background-image: url(https://wegotthiscovered.com/wp-content/uploads/2020/07/Thor-Love-And-Thunder-Epic-Fan-Poster.jpg);
+    background-position: top;
+    background-image: url(https://m.media-amazon.com/images/M/MV5BNjQ4NzQ2MmUtMTUwYi00ZTVhLWI5Y2MtYWM3ZmM5MTc1OGEyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg);
     grid-column: 2/3;
     grid-row: 3/4;
 }
